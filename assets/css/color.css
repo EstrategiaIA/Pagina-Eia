@@ -1,0 +1,34 @@
+/* Color */
+.error h3 span,#res-cross i,
+.navbar-links li.navbar-dropdown .dropdown a:hover,.accordion.two .content a,ol.breadcrumb li.breadcrumb-item.active {
+   
+    color: #d1ff34;
+
+}
+/* Background Color */
+.view-all a:hover i,button.error-button:hover,
+.search-popup .close-search,.preloader,.tag a:hover,
+.mobile-nav li.menu-item-has-children a i,.mobile-nav.desktop-menu,
+.mobile-nav > ul > li.menu-item-has-children.active > ul.sub-menu li:before,
+.pagenashio a:hover,.service-detail i,.contact-text .social-icon a:hover i,
+.pagenashion-number a:hover,.quote-color i,ul.features li:before,.business-soluton ul.social-icon i:hover,
+ul.categories li a:hover span,.our-admin a:hover,.pagenashion-number a.pagenashion:hover,
+.count-time.one,.section-contact:after,.boder-bar,ul.instagram-posts figure:before,
+.pricing i,.pricing .button:hover,.accordion-item.active .icon,.media i,
+ul.list-style i,.services.two:hover:before,.expert-icon:hover > a i,
+.reviews-img i,.blog h5,.widget-title .boder,.get-in-touch i,.team-details:hover:before,
+.button,.consulting i,.meter > span,.services:hover i:before, .services:hover i:after{
+
+    background-color:#d1ff34;
+
+}
+.mobile-nav > ul > li.menu-item-has-children > ul.sub-menu,
+.present span,.business-soluton ul.social-icon i:hover,.get-in-touch.two:hover,
+.pagenashion-number a.pagenashion:hover,.pagenashion-number a:hover,
+.accordion-item.active,ul.categories li a:hover span,
+.navbar-links li:hover > a,.expert-icon > a i:hover,.pricing .button {
+    border-color: #d1ff34 ;
+}
+.shapsdiv svg {
+    fill: #d1ff34;
+}
