@@ -4111,3 +4111,7 @@ ul.categories li a span,.our-admin a,.pagenashion-number a.pagenashion,.posted-i
     -moz-transition: all 0.3s ease-out 0.1s;
     -o-transition: all 0.3s ease-out 0.1s;
 }
+/* Corrección para el borde del carrusel en el Hero Banner */
+.swiper-heroone {
+  overflow: hidden;
+}
