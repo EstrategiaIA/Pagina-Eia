@@ -13,10 +13,16 @@
     <link rel="stylesheet" href="assets/css/style.css?v=2.1">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/color.css">
-    <!-- CORRECCIÓN DEFINITIVA PARA CARRUSEL -->
+    <!-- CORRECCIÓN DEFINITIVA PARA CARRUSEL Y IMÁGENES -->
     <style>
-      .hero-section-one {
-        overflow: hidden;
+      .hero-section-one, .hero-section-one .swiper-slide {
+        overflow: hidden; /* Oculta cualquier desbordamiento */
+      }
+      .hero-section-one .hero-img img {
+        width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+        height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+        max-height: 600px; /* Altura máxima para evitar que sea demasiado grande */
+        object-fit: contain; /* Asegura que toda la imagen sea visible sin deformarse */
       }
     </style>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -84,6 +90,7 @@
     </div>
   </div>
 </header>
+<!-- header end -->
 <section class="hero-section-one">
     <div class="container">
         <div class="row align-items-center">
@@ -101,7 +108,7 @@
                   </div>
                   <div class="col-lg-6">
                       <div class="hero-img">
-                          <img src="assets/img/hero-banner-empresas.png" alt="Consultoría IA para Empresas" style="max-height: 600px; width: auto; object-fit: contain;">
+                          <img src="assets/img/hero-banner-empresas.png" alt="Consultoría IA para Empresas">
                       </div>
                   </div>
                 </div>
@@ -118,7 +125,7 @@
                   </div>
                   <div class="col-lg-6">
                       <div class="hero-img">
-                          <img src="assets/img/hero-banner-profesionales.png" alt="IA para Productividad Profesional" style="max-height: 600px; width: auto; object-fit: contain;">
+                          <img src="assets/img/hero-banner-profesionales.png" alt="IA para Productividad Profesional">
                       </div>
                   </div>
                 </div>
