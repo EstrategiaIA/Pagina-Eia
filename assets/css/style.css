@@ -4116,4 +4116,19 @@ ul.categories li a span,.our-admin a,.pagenashion-number a.pagenashion,.posted-i
   overflow-x: hidden !important;
 }
 
+/* ==========================================================================
+   Correcciones Definitivas de EstrategiaIA
+   ========================================================================== */
 
+/* Corrección para imágenes desproporcionadas en la sección "Nuestra Promesa" */
+.expert-img figure,
+.expert-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.expert-img figure img,
+.expert-img img.expert-1 {
+  object-fit: cover; /* Obliga a la imagen a cubrir el espacio sin deformarse */
+  object-position: center; /* Centra la imagen */
+}
