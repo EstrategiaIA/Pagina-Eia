@@ -43,6 +43,13 @@
         max-height: 600px;
         object-fit: contain;
       }
+      /* === AJUSTES DE COLOR === */
+      .header-light .top-bar-slid { display: none; }
+      .header-light .bottom-bar { background-color: white; border-bottom: 1px solid #eee; }
+      .header-light .navbar-links li > a { color: #333; }
+      .header-light .menu-start svg { fill: #333; }
+      .header-light .line { stroke: #333; }
+      .header-light .bar-menu i { color: #333; }
     </style>
     
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -52,7 +59,7 @@
 <div class="preloader">
   <div class="loader"></div>
 </div>
-<header>
+<header class="header-light">
   <div class="container">
     <div class="top-bar-slid">
       <div>
@@ -153,7 +160,7 @@
         </div>
     </div>
 </section>
-<section class="gap">
+<section class="gap" style="background-color: #f7f7f7;">
   <div class="container">
     <div class="heading">
       <img src="assets/img/heading-img.png" alt="img">
@@ -216,7 +223,7 @@
         </div>
     </div>
 </section>
-<section class="gap no-top">
+<section class="gap no-top" style="background-color: #f7f7f7;">
   <div class="container">
     <div class="heading two">
       <p>NUESTRA PROMESA</p>
@@ -238,7 +245,7 @@
     <div class="row mt-5 text-center">
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="pillar-box">
-                <img src="assets/img/icon-check2.png" alt="Resultados Medibles" class="mb-3">
+                <img src="assets/img/icon-check.png" alt="Resultados Medibles" class="mb-3">
                 <h4>Resultados Medibles</h4>
                 <p>Enfoque en ROI y resultados tangibles para tu inversión.</p>
             </div>
