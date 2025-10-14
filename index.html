@@ -36,6 +36,13 @@
          top: 0;
          left: 0;
       }
+       /* Corrección #3: Imágenes del carrusel */
+      .hero-section-one .hero-img img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
+      }
     </style>
     
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -108,7 +115,7 @@
         <div class="row align-items-center">
           <div class="swiper swiper-heroone">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <div class="col-lg-12 swiper-slide">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                       <div class="hero-text">
@@ -124,7 +131,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="col-lg-12 swiper-slide">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                       <div class="hero-text">
@@ -213,7 +220,7 @@
   <div class="container">
     <div class="heading two">
       <p>NUESTRA PROMESA</p>
-      <h2>IA Aplicada <span>a tu Realidad </span></h2>
+      <h2>IA Aplicada a tu <span>Realidad Chilena</span></h2>
     </div>
     <div class="row align-items-center">
       <div class="col-lg-7">
@@ -231,7 +238,7 @@
     <div class="row mt-5 text-center">
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="pillar-box">
-                <img src="assets/img/icon-check2.png" alt="Resultados Medibles" class="mb-3">
+                <img src="assets/img/icon-check.png" alt="Resultados Medibles" class="mb-3">
                 <h4>Resultados Medibles</h4>
                 <p>Enfoque en ROI y resultados tangibles para tu inversión.</p>
             </div>
