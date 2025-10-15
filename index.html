@@ -79,6 +79,36 @@
           color: #ffffff;
       }
 
+      /* ============================================= */
+      /* == SOLUCIONES CSS PROPORCIONADAS == */
+      /* ============================================= */
+
+      /* Tarea 1: Corregir la visibilidad del título principal */
+      /* Se establece el color del H1 en la sección hero a blanco para asegurar el contraste. */
+      .hero-section-one .hero-text h1 {
+        color: #FFFFFF;
+      }
+
+      /* Tarea 2: Unificar y replicar efecto hover en contenedores */
+      /* Se aplica una transición suave a los cuatro contenedores de clase .consulting. */
+      .consulting {
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 12px; /* Añadido para que el fondo del hover respete el borde redondeado del contenedor. */
+      }
+
+      /* Al pasar el cursor, el fondo cambia a un azul/morado intenso. */
+      .consulting:hover {
+        background-color: #4A00E0;
+        border-color: transparent; /* Opcional: oculta el borde al hacer hover para un look más limpio. */
+      }
+
+      /* Se asegura que todo el texto principal (títulos, párrafos y listas) dentro del contenedor cambie a blanco en el estado hover para mantener la legibilidad. */
+      .consulting:hover h3,
+      .consulting:hover p,
+      .consulting:hover li {
+        color: #FFFFFF;
+      }
+
     </style>
     
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -105,7 +135,7 @@
             <i>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                </svg>
+                  </svg>
             </i>
             <span>WhatsApp:</span>
             <a class="me-3" href="https://wa.me/56941102950">+56 9 4110 2950</a>
@@ -146,16 +176,13 @@
     </div>
   </div>
 </header>
-<!-- ========== HERO SECTION MODIFICADA ========== -->
 <section class="hero-section-one">
     <div class="container">
-        <div class="row align-items-stretch"> <!-- align-items-stretch para igualar altura de columnas -->
-          <div class="col-lg-12">
+        <div class="row align-items-stretch"> <div class="col-lg-12">
             <div class="hero-text text-center" style="margin-bottom: 40px;">
                 <h1>Transforma tus Decisiones con Inteligencia Artificial Estratégica.</h1>
             </div>
           </div>
-          <!-- Columna Izquierda -->
           <div class="col-lg-6 mb-4 mb-lg-0">
               <div class="hero-column-box">
                   <div>
@@ -165,7 +192,6 @@
                   <a href="soluciones.html#empresas" class="button mt-3">Ver Soluciones para Empresas</a>
               </div>
           </div>
-          <!-- Columna Derecha -->
           <div class="col-lg-6">
               <div class="hero-column-box">
                   <div>
@@ -178,7 +204,6 @@
         </div>
     </div>
 </section>
-<!-- ========== FIN HERO SECTION MODIFICADA ========== -->
 <section class="gap" style="background-color: #f7f7f7;">
   <div class="container">
     <div class="heading">
@@ -219,7 +244,6 @@
                   <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
                   <h3>Para tu Empresa:</h3>
                   <ul class="list-style-challenges">
-                        <!-- ========== TEXTOS MODIFICADOS ========== -->
                         <li>¿Sientes que tu equipo se ahoga en tareas manuales que roban tiempo valioso?</li>
                         <li>¿Te cuesta tomar decisiones clave por falta de datos claros y confiables?</li>
                         <li>¿La competencia avanza más rápido y te sientes en desventaja?</li>
@@ -231,7 +255,6 @@
                   <i><img src="assets/img/icon-4.png" alt="Desafíos del Día a Día"></i>
                   <h3>En tu Día a Día:</h3>
                   <ul class="list-style-challenges">
-                        <!-- ========== TEXTOS MODIFICADOS ========== -->
                         <li>¿Las jornadas laborales se extienden sin fin, afectando tu balance de vida?</li>
                         <li>¿El trabajo repetitivo consume tus horas más productivas?</li>
                         <li>¿Sientes que el día a día te impide pensar en el futuro de tu negocio o carrera?</li>
@@ -248,7 +271,6 @@
   <div class="container">
     <div class="heading two">
       <p>NUESTRA PROMESA</p>
-      <!-- ========== TEXTO MODIFICADO ========== -->
       <h2>Tu socio estratégico en la era de la IA: Experiencia local, resultados de clase mundial.</h2>
     </div>
     <div class="row align-items-center">
@@ -295,11 +317,9 @@
       <h2>¿Listo para dar el Siguiente Paso?</h2>
       <p>No te quedes atrás. Es el momento de tomar el control y usar la Inteligencia Artificial a tu favor. En EstrategiaIA, estamos listos para ser tu copiloto en esta transformación.</p>
     </div>
-    <!-- ========== CTA FINAL MODIFICADO ========== -->
     <div class="work-consulting justify-content-center mt-4">
         <a href="URL_DE_TU_GOOGLE_FORM" target="_blank" class="button">Solicita tu Diagnóstico Estratégico Gratuito</a>
-        <!-- Se ha eliminado el segundo botón -->
-    </div>
+        </div>
   </div>
 </section>
 <footer class="gap no-bottom" style="background-image:url(https://via.placeholder.com/1920x750)">
@@ -321,7 +341,7 @@
             <i>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                </svg>
+                  </svg>
             </i>
             <div>
               <span>WhatsApp</span> 
