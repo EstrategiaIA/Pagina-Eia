@@ -55,14 +55,15 @@
       .hero-column-box {
         text-align: left;
         padding: 30px;
-        border: 1px solid #e0e0e0;
+        border: 1px solid #888; /* Borde más visible en fondo oscuro */
         border-radius: 12px;
         height: 100%;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil para destacar */
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        color: #ffffff; /* Color de texto blanco para el contenido */
       }
       .hero-column-box h2 {
           font-size: 1.8rem;
@@ -70,6 +71,14 @@
       }
        .hero-column-box p {
           flex-grow: 1;
+      }
+
+      /* Ajustes para la sección de desafíos */
+      .challenge-section .consulting {
+        height: 100%;
+      }
+      .consulting h3, .consulting .list-style-challenges li {
+        color: #ffffff;
       }
     </style>
     
@@ -198,14 +207,14 @@
     </div>
   </div>
 </section>
-<section class="gap no-top">
+<section class="gap no-top challenge-section">
     <div class="container">
         <div class="heading">
             <img src="assets/img/heading-img.png" alt="img">
             <p>¿Te identificas con esto?</p>
             <h2>¿Enfrentas estos <span>Desafíos?</span></h2>
         </div>
-        <div class="row">
+        <div class="row align-items-stretch">
             <div class="col-lg-6">
                 <div class="consulting" style="background-image:url(assets/img/background-blue.jpg)">
                   <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
@@ -364,3 +373,5 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
