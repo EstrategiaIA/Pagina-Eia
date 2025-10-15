@@ -33,10 +33,10 @@
         height: 410px; /* Altura fija para mantener la proporción del diseño */
       }
       .expert-img img.expert-1 {
-         top: 0;
-         left: 0;
+          top: 0;
+          left: 0;
       }
-       /* Corrección #3: Imágenes del carrusel */
+        /* Corrección #3: Imágenes del carrusel */
       .hero-section-one .hero-img img {
         width: 100%;
         height: auto;
@@ -50,6 +50,27 @@
       .header-light .menu-start svg { fill: #333; }
       .header-light .line { stroke: #333; }
       .header-light .bar-menu i { color: #333; }
+
+      /* Estilo para las nuevas columnas del Hero Section */
+      .hero-column-box {
+        text-align: left;
+        padding: 30px;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hero-column-box h2 {
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+      }
+       .hero-column-box p {
+          flex-grow: 1;
+      }
     </style>
     
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -92,18 +113,18 @@
           <div class="boder-nav">
             <nav class="navbar">
             <ul class="navbar-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="navbar-dropdown menu-item-children">
-                      <a href="soluciones.html">Soluciones</a>
-                      <div class="dropdown">
-                        <a href="soluciones.html#empresas">Para Empresas (PYMES)</a>
-                        <a href="soluciones.html#profesionales">Para Profesionales y Líderes</a>
-                      </div>
-                    </li>
-                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="casos-de-exito.html">Casos de Éxito</a></li>
-                    <li><a href="blog.html">Blog / Recursos</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
+                      <li><a href="index.html">Inicio</a></li>
+                      <li class="navbar-dropdown menu-item-children">
+                        <a href="soluciones.html">Soluciones</a>
+                        <div class="dropdown">
+                          <a href="soluciones.html#empresas">Para Empresas (PYMES)</a>
+                          <a href="soluciones.html#profesionales">Para Profesionales y Líderes</a>
+                        </div>
+                      </li>
+                      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                      <li><a href="casos-de-exito.html">Casos de Éxito</a></li>
+                      <li><a href="blog.html">Blog / Recursos</a></li>
+                      <li><a href="contact.html">Contacto</a></li>
             </ul>
           </nav>
             <div class="menu-end">
@@ -117,49 +138,39 @@
     </div>
   </div>
 </header>
+<!-- ========== HERO SECTION MODIFICADA ========== -->
 <section class="hero-section-one">
     <div class="container">
-        <div class="row align-items-center">
-          <div class="swiper swiper-heroone">
-            <div class="swiper-wrapper">
-              <div class="col-lg-12 swiper-slide">
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                      <div class="hero-text">
-                          <h1>Transforma tu Empresa con IA Práctica y Rentable.</h1>
-                          <p>Potenciamos a PYMES en Chile para que sean más eficientes, competitivas e innovadoras a través de soluciones claras y resultados concretos.</p>
-                          <a href="soluciones.html#empresas" class="button">Soluciones para Empresas</a>
-                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                      <div class="hero-img">
-                          <img src="assets/img/hero-banner-empresas.png" alt="Consultoría IA para Empresas">
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 swiper-slide">
-                <div class="row align-items-center">
-                  <div class="col-lg-6">
-                      <div class="hero-text">
-                          <h1>Acelera tu Productividad y Recupera tu Tiempo.</h1>
-                          <p>Ayudamos a profesionales y líderes de equipo a automatizar tareas para que puedan enfocarse en el trabajo de alto impacto y liderar con estrategia.</p>
-                          <a href="soluciones.html#profesionales" class="button">Programa para Profesionales</a>
-                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                      <div class="hero-img">
-                          <img src="assets/img/hero-banner-profesionales.png" alt="IA para Productividad Profesional">
-                      </div>
-                  </div>
-                </div>
-              </div>
+        <div class="row align-items-stretch"> <!-- align-items-stretch para igualar altura de columnas -->
+          <div class="col-lg-12">
+            <div class="hero-text text-center" style="margin-bottom: 40px;">
+                <h1>Transforma tus Decisiones con Inteligencia Artificial Estratégica.</h1>
             </div>
-            <div class="swiper-pagination"></div>
+          </div>
+          <!-- Columna Izquierda -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="hero-column-box">
+                  <div>
+                      <h2>Para tu PYME</h2>
+                      <p>Deja de improvisar. Implementa IA práctica para optimizar recursos, potenciar tu crecimiento y tomar decisiones rentables basadas en datos.</p>
+                  </div>
+                  <a href="soluciones.html#empresas" class="button mt-3">Ver Soluciones para Empresas</a>
+              </div>
+          </div>
+          <!-- Columna Derecha -->
+          <div class="col-lg-6">
+              <div class="hero-column-box">
+                  <div>
+                    <h2>Para tu Carrera Profesional</h2>
+                    <p>Acelera tu productividad, automatiza tareas repetitivas y conviértete en un perfil indispensable recuperando tu tiempo para la estrategia.</p>
+                  </div>
+                  <a href="soluciones.html#profesionales" class="button mt-3">Ver Programa para Profesionales</a>
+              </div>
           </div>
         </div>
     </div>
 </section>
+<!-- ========== FIN HERO SECTION MODIFICADA ========== -->
 <section class="gap" style="background-color: #f7f7f7;">
   <div class="container">
     <div class="heading">
@@ -200,9 +211,10 @@
                   <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
                   <h3>Para tu Empresa:</h3>
                   <ul class="list-style-challenges">
-                        <li>Procesos manuales que consumen tiempo y recursos.</li>
-                        <li>Dificultad para tomar decisiones basadas en datos.</li>
-                        <li>La presión de competir con actores más grandes.</li>
+                        <!-- ========== TEXTOS MODIFICADOS ========== -->
+                        <li>¿Sientes que tu equipo se ahoga en tareas manuales que roban tiempo valioso?</li>
+                        <li>¿Te cuesta tomar decisiones clave por falta de datos claros y confiables?</li>
+                        <li>¿La competencia avanza más rápido y te sientes en desventaja?</li>
                   </ul>
                 </div>
             </div>
@@ -211,9 +223,10 @@
                   <i><img src="assets/img/icon-4.png" alt="Desafíos del Día a Día"></i>
                   <h3>En tu Día a Día:</h3>
                   <ul class="list-style-challenges">
-                        <li>Jornadas que se hacen eternas.</li>
-                        <li>Tiempo perdido en tareas repetitivas.</li>
-                        <li>La sensación de que el trabajo operativo te aleja de la estrategia.</li>
+                        <!-- ========== TEXTOS MODIFICADOS ========== -->
+                        <li>¿Las jornadas laborales se extienden sin fin, afectando tu balance de vida?</li>
+                        <li>¿El trabajo repetitivo consume tus horas más productivas?</li>
+                        <li>¿Sientes que el día a día te impide pensar en el futuro de tu negocio o carrera?</li>
                   </ul>
                 </div>
             </div>
@@ -227,7 +240,8 @@
   <div class="container">
     <div class="heading two">
       <p>NUESTRA PROMESA</p>
-      <h2>IA Aplicada a tu <span>Realidad Chilena</span></h2>
+      <!-- ========== TEXTO MODIFICADO ========== -->
+      <h2>Tu socio estratégico en la era de la IA: Experiencia local, resultados de clase mundial.</h2>
     </div>
     <div class="row align-items-center">
       <div class="col-lg-7">
@@ -273,9 +287,10 @@
       <h2>¿Listo para dar el Siguiente Paso?</h2>
       <p>No te quedes atrás. Es el momento de tomar el control y usar la Inteligencia Artificial a tu favor. En EstrategiaIA, estamos listos para ser tu copiloto en esta transformación.</p>
     </div>
+    <!-- ========== CTA FINAL MODIFICADO ========== -->
     <div class="work-consulting justify-content-center mt-4">
-        <a href="URL_DE_TU_GOOGLE_FORM" target="_blank" class="button">Diagnóstico Gratuito PYMES</a>
-        <a href="mailto:contacto@estrategiaia.cl?subject=Me interesa acelerar mi producción con IA" class="button button-secondary ms-3">Comienza a Tomar el Control</a>
+        <a href="URL_DE_TU_GOOGLE_FORM" target="_blank" class="button">Solicita tu Diagnóstico Estratégico Gratuito</a>
+        <!-- Se ha eliminado el segundo botón -->
     </div>
   </div>
 </section>
