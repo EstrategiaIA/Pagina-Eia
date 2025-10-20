@@ -53,26 +53,25 @@
 
       /* Estilo para las nuevas columnas del Hero Section */
       .hero-column-box {
-        text-align: left;
-        padding: 30px;
-        border: 1px solid #888; /* Borde más visible en fondo oscuro */
-        border-radius: 12px;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil para destacar */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: #ffffff; /* Color de texto blanco para el contenido */
+          text-align: left;
+          padding: 30px;
+          border: 1px solid #888; /* Borde más visible en fondo oscuro */
+          border-radius: 12px;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil para destacar */
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
       }
       .hero-column-box h2 {
           font-size: 1.8rem;
           margin-bottom: 15px;
-          /* Eliminado: color: #ffffff; -> Ya se hereda del padre .hero-column-box */
+          color: #ffffff; /* Color de texto blanco explícito */
       }
-       .hero-column-box p {
+      .hero-column-box p {
           flex-grow: 1;
-          /* Eliminado: color: #ffffff; -> Ya se hereda del padre .hero-column-box */
+          color: #ffffff; /* Color de texto blanco explícito */
       }
       
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
@@ -394,3 +393,4 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
