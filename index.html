@@ -52,7 +52,7 @@
       .header-light .bar-menu i { color: #333; }
 
       /* Estilo para las nuevas columnas del Hero Section */
-      .hero-column-box {
+      section.hero-section-one .hero-column-box {
           text-align: left;
           padding: 30px;
           border: 1px solid #e0e0e0;
@@ -62,6 +62,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          background-color: #ffffff !important; /* REGLA DE MÁXIMA PRIORIDAD */
       }
       
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
@@ -175,7 +176,7 @@
             </div>
           </div>
           <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="hero-column-box" style="background-color: #ffffff !important;">
+              <div class="hero-column-box">
                   <div>
                       <h2>Para tu PYME</h2>
                       <p>Deja de improvisar. Implementa IA práctica para optimizar recursos, potenciar tu crecimiento y tomar decisiones rentables basadas en datos.</p>
@@ -184,7 +185,7 @@
               </div>
           </div>
           <div class="col-lg-6">
-              <div class="hero-column-box" style="background-color: #ffffff !important;">
+              <div class="hero-column-box">
                   <div>
                     <h2>Para tu Carrera Profesional</h2>
                     <p>Acelera tu productividad, automatiza tareas repetitivas y conviértete en un perfil indispensable recuperando tu tiempo para la estrategia.</p>
@@ -383,6 +384,8 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
 
 
