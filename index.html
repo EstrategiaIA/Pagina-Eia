@@ -63,15 +63,16 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          color: #ffffff; /* Restaurado para asegurar herencia base */
       }
       .hero-column-box h2 {
           font-size: 1.8rem;
           margin-bottom: 15px;
-          color: #ffffff; /* Color de texto blanco explícito */
+          color: #ffffff !important; /* Color de texto blanco explícito y FORZADO */
       }
       .hero-column-box p {
           flex-grow: 1;
-          color: #ffffff; /* Color de texto blanco explícito */
+          color: #ffffff !important; /* Color de texto blanco explícito y FORZADO */
       }
       
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
@@ -393,4 +394,6 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
