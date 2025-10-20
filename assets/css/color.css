@@ -2,7 +2,7 @@
 .error h3 span,#res-cross i,
 .navbar-links li.navbar-dropdown .dropdown a:hover,.accordion.two .content a,ol.breadcrumb li.breadcrumb-item.active {
    
-    color: #37bc40;
+    color: #51c259;
 
 }
 /* Background Color */
@@ -19,7 +19,7 @@ ul.list-style i,.services.two:hover:before,.expert-icon:hover > a i,
 .reviews-img i,.blog h5,.widget-title .boder,.get-in-touch i,.team-details:hover:before,
 .button,.consulting i,.meter > span,.services:hover i:before, .services:hover i:after{
 
-    background-color:#37bc40;
+    background-color:#51c259;
 
 }
 .mobile-nav > ul > li.menu-item-has-children > ul.sub-menu,
@@ -27,8 +27,8 @@ ul.list-style i,.services.two:hover:before,.expert-icon:hover > a i,
 .pagenashion-number a.pagenashion:hover,.pagenashion-number a:hover,
 .accordion-item.active,ul.categories li a:hover span,
 .navbar-links li:hover > a,.expert-icon > a i:hover,.pricing .button {
-    border-color: #37bc40;
+    border-color: #51c259;
 }
 .shapsdiv svg {
-    fill: #37bc40;
+    fill: #51c259;
 }
