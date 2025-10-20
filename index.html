@@ -51,8 +51,8 @@
       .header-light .line { stroke: #333; }
       .header-light .bar-menu i { color: #333; }
 
-      /* Estilo para las nuevas columnas del Hero Section */
-      section.hero-section-one .hero-column-box {
+      /* Estilo para las nuevas columnas del Hero Section - SOLUCIÓN DEFINITIVA */
+      .hero-column-box {
           text-align: left;
           padding: 30px;
           border: 1px solid #e0e0e0;
@@ -62,7 +62,9 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          background-color: #ffffff !important; /* REGLA DE MÁXIMA PRIORIDAD */
+          background-color: #ffffff; /* 1. Fondo blanco */
+          position: relative;          /* 2. Permite usar z-index */
+          z-index: 2;                  /* 3. Levanta la caja por encima del overlay oscuro */
       }
       
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
@@ -384,6 +386,8 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
 
 
