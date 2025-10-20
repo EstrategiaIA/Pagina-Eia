@@ -67,15 +67,15 @@
           z-index: 2;                  /* 3. Levanta la caja por encima del overlay oscuro */
       }
       
-      /* === AJUSTE DE COLOR TEXTO DESAFÍOS === */
-      .list-style-challenges li {
-          color: #000000; /* Pone el texto de la lista de desafíos en negro */
+      /* === AJUSTE DE COLOR TEXTO DESAFÍOS (MÁXIMA PRIORIDAD) === */
+      section.gap.no-top .consulting .list-style-challenges li {
+          color: #000000 !important; /* Regla específica para forzar el color negro */
       }
 
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
       .gap.no-top .consulting:hover h3,
       .gap.no-top .consulting:hover .list-style-challenges li {
-          color: #ffffff;
+          color: #ffffff !important; /* Se añade !important para asegurar el hover */
       }
 
       /* ============================================= */
@@ -103,10 +103,10 @@
 
       /* Se asegura que todo el texto principal (títulos, párrafos y listas) dentro del contenedor cambie a blanco en el estado hover para mantener la legibilidad. */
       .consulting:hover h3,
-      .consulting:hover p,
-      .consulting:hover li {
+      .consulting:hover p {
         color: #FFFFFF;
       }
+      /* La regla para 'li' en hover se movió arriba para mayor especificidad */
 
     </style>
     
@@ -391,6 +391,8 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
 
 
