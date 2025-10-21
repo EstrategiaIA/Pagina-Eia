@@ -67,15 +67,10 @@
           z-index: 2;                  /* 3. Levanta la caja por encima del overlay oscuro */
       }
       
-      /* === AJUSTE DE COLOR TEXTO DESAFÍOS (MÁXIMA PRIORIDAD) === */
-      section.gap.no-top .consulting .list-style-challenges li {
-          color: #000000 !important; /* Regla específica para forzar el color negro */
-      }
-
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
       .gap.no-top .consulting:hover h3,
       .gap.no-top .consulting:hover .list-style-challenges li {
-          color: #ffffff !important; /* Se añade !important para asegurar el hover */
+          color: #ffffff !important; /* Se asegura que el hover funcione sobre el estilo en línea */
       }
 
       /* ============================================= */
@@ -92,21 +87,20 @@
       /* Se aplica una transición suave a los cuatro contenedores de clase .consulting. */
       .consulting {
         transition: background-color 0.3s ease, color 0.3s ease;
-        border-radius: 12px; /* Añadido para que el fondo del hover respete el borde redondeado del contenedor. */
+        border-radius: 12px;
       }
 
       /* Al pasar el cursor, el fondo cambia a un azul/morado intenso. */
       .consulting:hover {
         background-color: #4A00E0;
-        border-color: transparent; /* Opcional: oculta el borde al hacer hover para un look más limpio. */
+        border-color: transparent;
       }
 
-      /* Se asegura que todo el texto principal (títulos, párrafos y listas) dentro del contenedor cambie a blanco en el estado hover para mantener la legibilidad. */
+      /* Se asegura que el texto principal (títulos, párrafos) dentro del contenedor cambie a blanco en el estado hover */
       .consulting:hover h3,
       .consulting:hover p {
         color: #FFFFFF;
       }
-      /* La regla para 'li' en hover se movió arriba para mayor especificidad */
 
     </style>
     
@@ -243,9 +237,9 @@
                   <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
                   <h3>Para tu Empresa:</h3>
                   <ul class="list-style-challenges">
-                        <li>¿Sientes que tu equipo se ahoga en tareas manuales que roban tiempo valioso?</li>
-                        <li>¿Te cuesta tomar decisiones clave por falta de datos claros y confiables?</li>
-                        <li>¿La competencia avanza más rápido y te sientes en desventaja?</li>
+                        <li style="color: #000;">¿Sientes que tu equipo se ahoga en tareas manuales que roban tiempo valioso?</li>
+                        <li style="color: #000;">¿Te cuesta tomar decisiones clave por falta de datos claros y confiables?</li>
+                        <li style="color: #000;">¿La competencia avanza más rápido y te sientes en desventaja?</li>
                   </ul>
                 </div>
             </div>
@@ -254,9 +248,9 @@
                   <i><img src="assets/img/icon-4.png" alt="Desafíos del Día a Día"></i>
                   <h3>En tu Día a Día:</h3>
                   <ul class="list-style-challenges">
-                        <li>¿Las jornadas laborales se extienden sin fin, afectando tu balance de vida?</li>
-                        <li>¿El trabajo repetitivo consume tus horas más productivas?</li>
-                        <li>¿Sientes que el día a día te impide pensar en el futuro de tu negocio o carrera?</li>
+                        <li style="color: #000;">¿Las jornadas laborales se extienden sin fin, afectando tu balance de vida?</li>
+                        <li style="color: #000;">¿El trabajo repetitivo consume tus horas más productivas?</li>
+                        <li style="color: #000;">¿Sientes que el día a día te impide pensar en el futuro de tu negocio o carrera?</li>
                   </ul>
                 </div>
             </div>
@@ -391,6 +385,8 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
 
 
