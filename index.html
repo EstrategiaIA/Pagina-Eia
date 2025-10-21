@@ -99,39 +99,56 @@
           z-index: 2;
       }
       
-      /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
-      .gap.no-top .consulting:hover h3,
-      .gap.no-top .consulting:hover p, /* Asegura que el párrafo también cambie a blanco */
-      .gap.no-top .consulting:hover li {
-          color: #ffffff !important;
-      }
+      /* ============================================= */
+      /* == NUEVOS ESTILOS PARA CAJAS ".consulting" == */
+      /* ============================================= */
       
-      /* ============================================= */
-      /* == SOLUCIONES CSS PROPORCIONADAS == */
-      /* ============================================= */
-
-      /* Tarea 1: Corregir la visibilidad del título principal */
-      /* Se establece el color del H1 en la sección hero a blanco para asegurar el contraste. */
-      .hero-section-one .hero-text h1 {
-        color: #FFFFFF;
-      }
-
-      /* Tarea 2: Unificar y replicar efecto hover en contenedores */
-      /* Se aplica una transición suave a los cuatro contenedores de clase .consulting. */
+      /* Estado por Defecto */
       .consulting {
-        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: #FFFFFF;
+        border: 1px solid #E0E0E0;
         border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
       }
 
-      /* Al pasar el cursor, el fondo cambia a un azul/morado intenso. */
+      .consulting i, .consulting i img {
+        transition: all 0.3s ease; 
+        /* Si los íconos fueran SVG o Font, se añadiría: fill: #51c259; color: #51c259; */
+      }
+
+      .consulting h3 {
+        color: #333333; /* Texto Principal */
+        transition: all 0.3s ease;
+      }
+
+      .consulting p {
+        color: #555555; /* Texto Secundario */
+        transition: all 0.3s ease;
+      }
+
+      /* Estado Hover */
       .consulting:hover {
-        background-color: #4A00E0;
-        border-color: transparent;
+        background-color: #51c259; /* Verde Corporativo */
+        border-color: #51c259;
       }
 
-      /* Se asegura que el texto principal (títulos, párrafos) dentro del contenedor cambie a blanco en el estado hover */
       .consulting:hover h3,
       .consulting:hover p {
+        color: #FFFFFF; /* Blanco */
+      }
+
+      .consulting:hover i {
+         /* Si los íconos fueran SVG o Font, esto los cambiaría a blanco */
+        fill: #FFFFFF;
+        color: #FFFFFF;
+      }
+      
+
+      /* Tarea 1: Corregir la visibilidad del título principal */
+      .hero-section-one .hero-text h1 {
         color: #FFFFFF;
       }
 
@@ -414,4 +431,6 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
