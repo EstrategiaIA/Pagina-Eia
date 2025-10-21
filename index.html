@@ -15,6 +15,27 @@
     <link rel="stylesheet" href="assets/css/color.css">
     
     <style>
+      /* === CAMBIO GLOBAL DE COLOR A VERDE (#51c259) === */
+      
+      /* 1. Botones */
+      .button {
+          background-color: #51c259 !important; /* Nuevo color de fondo */
+          color: #ffffff !important; /* Texto blanco para contraste */
+      }
+      .button:hover {
+          color: #ffffff !important;
+      }
+      .button:before {
+        /* Efecto de oscurecimiento sutil al pasar el mouse */
+        background-color: rgba(0, 0, 0, 0.15) !important; 
+      }
+
+      /* 2. Resaltado de Títulos (como en "Desafíos") */
+      .heading span:before {
+          background-color: #51c259;
+      }
+
+
       /* Corrección #1: Borde sobrante del carrusel en Hero Banner */
       .hero-section-one {
         overflow: hidden;
@@ -62,7 +83,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          background-color: #F0FFF0; /* <-- AQUÍ SE HIZO EL CAMBIO DE COLOR */
+          background-color: #F0FFF0;
           position: relative;
           z-index: 2;
       }
@@ -181,7 +202,7 @@
               <div class="hero-column-box">
                   <div>
                       <h2>Para tu PYME</h2>
-                      <p>Deja de improvisar. Implementa IA práctica para optimizar recursos, potenciar tu crecimiento y tomar decisiones rentables basadas en datos.</p>
+                      <p>Deja de improvisar. En EstrategiaIA, convertimos la complejidad de la Inteligencia Artificial en soluciones claras y tangibles que impulsan la eficiencia, reducen costos y aceleran el crecimiento de tu negocio..</p>
                   </div>
                   <a href="soluciones.html#empresas" class="button mt-3">Ver Soluciones para Empresas</a>
               </div>
@@ -382,30 +403,3 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
