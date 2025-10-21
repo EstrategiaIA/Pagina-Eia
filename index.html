@@ -35,6 +35,17 @@
           background-color: #51c259;
       }
 
+      /* 3. Formas decorativas amarillas/flúor */
+      .ready-to:after {
+          background-color: #51c259 !important; /* Nuevo color verde */
+          border-color: #51c259 !important; /* Nuevo color de borde */
+      }
+
+      /* Se oculta la forma SVG del hero-section que no se puede recolorear con CSS */
+      .hero-section-one:after {
+          display: none !important;
+      }
+
 
       /* Corrección #1: Borde sobrante del carrusel en Hero Banner */
       .hero-section-one {
@@ -403,3 +414,4 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
