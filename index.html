@@ -69,10 +69,11 @@
       
       /* === CORRECCIÓN HOVER SECCIÓN DESAFÍOS === */
       .gap.no-top .consulting:hover h3,
-      .gap.no-top .consulting:hover .list-style-challenges li {
-          color: #ffffff !important; /* Se asegura que el hover funcione sobre el estilo en línea */
+      .gap.no-top .consulting:hover p, /* Asegura que el párrafo también cambie a blanco */
+      .gap.no-top .consulting:hover li {
+          color: #ffffff !important;
       }
-
+      
       /* ============================================= */
       /* == SOLUCIONES CSS PROPORCIONADAS == */
       /* ============================================= */
@@ -231,28 +232,24 @@
             <p>¿Te identificas con esto?</p>
             <h2>¿Enfrentas estos <span>Desafíos?</span></h2>
         </div>
-        <div class="row align-items-stretch">
+        <div class="row">
             <div class="col-lg-6">
-                <div class="consulting">
-                  <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
-                  <h3>Para tu Empresa:</h3>
-                  <ul class="list-style-challenges">
-                        <li style="color: #000;">¿Sientes que tu equipo se ahoga en tareas manuales que roban tiempo valioso?</li>
-                        <li style="color: #000;">¿Te cuesta tomar decisiones clave por falta de datos claros y confiables?</li>
-                        <li style="color: #000;">¿La competencia avanza más rápido y te sientes en desventaja?</li>
-                  </ul>
-                </div>
+              <div class="consulting">
+                <i><img src="assets/img/consulting-3.png" alt="Desafíos de Empresa"></i> 
+                <h3>Para tu Empresa:</h3>
+                <p>¿Sientes que tu equipo se ahoga en tareas manuales, te cuesta tomar decisiones clave por falta de datos y la competencia avanza más rápido?</p>
+                <!-- Botón opcional si se necesita -->
+                <!-- <a href="#" class="button mt-3">Ver Detalles</a> -->
+              </div>
             </div>
             <div class="col-lg-6">
-                <div class="consulting">
-                  <i><img src="assets/img/icon-4.png" alt="Desafíos del Día a Día"></i>
-                  <h3>En tu Día a Día:</h3>
-                  <ul class="list-style-challenges">
-                        <li style="color: #000;">¿Las jornadas laborales se extienden sin fin, afectando tu balance de vida?</li>
-                        <li style="color: #000;">¿El trabajo repetitivo consume tus horas más productivas?</li>
-                        <li style="color: #000;">¿Sientes que el día a día te impide pensar en el futuro de tu negocio o carrera?</li>
-                  </ul>
-                </div>
+              <div class="consulting">
+                <i><img src="assets/img/icon-4.png" alt="Desafíos del Día a Día"></i>
+                <h3>En tu Día a Día:</h3>
+                <p>¿Las jornadas laborales se extienden, el trabajo repetitivo consume tus horas y el día a día te impide pensar en el futuro de tu negocio o carrera?</p>
+                 <!-- Botón opcional si se necesita -->
+                 <!-- <a href="#" class="button mt-3">Ver Detalles</a> -->
+              </div>
             </div>
         </div>
         <div class="text-center mt-5">
@@ -385,6 +382,8 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
 
 
