@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/color.css">
 
+    <!-- Estilos heredados y adaptados de index.html -->
     <style>
       /* === CAMBIO GLOBAL DE COLOR A VERDE (#51c259) === */
       
@@ -86,7 +87,11 @@
       .consulting:hover h3, .consulting:hover p { color: #FFFFFF; }
       .consulting:hover i { fill: #FFFFFF; color: #FFFFFF; } /* Para SVGs/Fonts */
 
-      /* Ajuste específico para el texto del banner */
+      /* === AJUSTES BANNER QUIÉNES SOMOS === */
+       .banner {
+           padding-top: 180px; /* Reducido desde 290px */
+           padding-bottom: 100px; /* Reducido desde 130px */
+       }
        .banner-text p.subtitle {
            color: #f0f0f0; /* Un gris claro para el subtítulo */
            font-size: 1.1em;
@@ -98,10 +103,13 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/loaded.js"></script>
 </head>
-<body class="header-light"> <div class="preloader">
+<body class="header-light"> <!-- Añadido header-light para menú blanco -->
+
+<div class="preloader">
   <div class="loader"></div>
 </div>
-<header class="header-light"> <div class="container">
+<header class="header-light"> <!-- Modificado para header blanco -->
+    <div class="container">
         <div class="top-bar-slid">
           <div>
             <div class="phone-data">
@@ -165,12 +173,7 @@
                 <div class="banner-text">
                     <h2>Un Aliado Estratégico, no un simple proveedor de tecnología.</h2>
                     <p class="subtitle">Mi misión es forjar Estrategas Aumentados en las PYMES de Chile, entregando no solo herramientas, sino una visión de negocio potenciada por IA.</p> 
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">Quiénes Somos</li>
-                    </ol>
+                    <!-- Breadcrumbs eliminados -->
                 </div>
             </div>
         </div>
@@ -309,7 +312,7 @@
                         </div>
                     </div>
                 </div>
-                 <p class="mt-4">Estas cifras representan el potencial que podemos desbloquear juntos. Agenda una sesión de diagnóstico y descubre el impacto que podríamos generar en tu negocio.</p>
+                <p class="mt-4">Estas cifras representan el potencial que podemos desbloquear juntos. Agenda una sesión de diagnóstico y descubre el impacto que podríamos generar en tu negocio.</p>
             </div>
             <div class="col-lg-6">
               <div class="mscs-scaled img-hover ms-lg-5">
@@ -323,7 +326,8 @@
 </section>
 <section class="gap ready-to" style="background-image: url(https://via.placeholder.com/1920x691);">
   <div class="container">
-    <div class="ready-to-text text-center"> <p>IA práctica, aplicable y rentable</p>
+    <div class="ready-to-text text-center"> 
+      <p>IA práctica, aplicable y rentable</p>
       <h2>Conversemos sobre cómo mi experiencia y metodología pueden impulsar tu negocio.</h2>
     </div>
     <div class="work-consulting">
