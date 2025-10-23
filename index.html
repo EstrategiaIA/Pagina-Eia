@@ -49,8 +49,14 @@
       /* 4. Eliminar fondo ovalado azul/violeta */
       .work-consulting {
           background-color: transparent !important;
-          padding: 0 !important;
+          padding: 0 !important; /* Remueve padding para que no ocupe espacio extra */
+          border: none !important; /* Asegura que no tenga borde */
+          width: auto !important; /* Permite que el ancho se ajuste al botón */
+          margin: 30px auto !important; /* Mantiene el margen superior y centra */
+          display: block !important; /* Asegura que se centre correctamente */
+          text-align: center; /* Centra el botón hijo */
       }
+
 
       /* 5. Cambiar color del efecto "shine" en imagen */
       .img-hover figure::before {
@@ -368,7 +374,8 @@
       <p>No te quedes atrás. Es el momento de tomar el control y usar la Inteligencia Artificial a tu favor. En EstrategiaIA, estamos listos para ser tu copiloto en esta transformación.</p>
     </div>
     <div class="work-consulting justify-content-center mt-4">
-        <a href="URL_DE_TU_GOOGLE_FORM" target="_blank" class="button">Solicita tu Diagnóstico Estratégico Gratuito</a>
+        <!-- AQUÍ SE HIZO EL CAMBIO -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0TY_ONZlfC8vsXoi0VhIVnYzUjQXTcnrKOdTdRpOizzDQ/viewform?usp=header" target="_blank" class="button">Realiza tu Diagnóstico Estratégico Gratuito</a>
         </div>
   </div>
 </section>
@@ -442,4 +449,6 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+
 
