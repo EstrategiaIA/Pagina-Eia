@@ -70,7 +70,7 @@
       .header-light .line { stroke: #333; }
       .header-light .bar-menu i { color: #333; }
       
-       /* === ESTILOS PARA CAJAS ".consulting" (Si se usaran en esta página) === */
+       /* === ESTILOS PARA CAJAS ".consulting" === */
       .consulting {
         background-color: #FFFFFF;
         border: 1px solid #E0E0E0;
@@ -97,6 +97,34 @@
            font-size: 1.1em;
            margin-top: 15px;
        }
+
+      /* === REDISEÑO SECCIÓN "DESMITIFICANDO LA IA" === */
+      .desmitificando-section {
+          padding-top: 4rem; /* 64px */
+          padding-bottom: 4rem; /* 64px */
+      }
+      .desmitificando-content {
+          max-width: 700px; /* Ancho máximo para legibilidad */
+          margin: 0 auto; /* Centrado */
+          text-align: center; /* Centra el icono y título por defecto */
+      }
+      .desmitificando-content img {
+          margin-bottom: 1rem; /* Espacio reducido entre icono y título */
+      }
+      .desmitificando-content h3 {
+          text-align: center; /* Asegura título centrado */
+          margin-bottom: 1.5rem; /* Espacio aumentado entre título y párrafo */
+          font-weight: 800; /* Asegura que el título sea prominente */
+          font-size: 2rem; /* Tamaño de título */
+      }
+       .desmitificando-content p {
+           text-transform: none; /* Elimina mayúsculas */
+           font-size: 1rem; /* Tamaño estándar de párrafo */
+           line-height: 1.7; /* Interlineado aumentado */
+           text-align: left; /* Párrafo alineado a la izquierda */
+           color: #555555; /* Color de texto secundario */
+       }
+
 
     </style>
 
@@ -265,16 +293,13 @@
     </div>
 </section>
 
-<section class="gap">
+<!-- Sección Desmitificando la IA Rediseñada -->
+<section class="gap desmitificando-section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                 <div class="heading">
-                     <img src="assets/img/heading-img.png" alt="img">
-                     <h3>Desmitificando la IA para PYMES</h3>
-                     <p>Muchos creen que la IA es cara, compleja o solo para grandes corporaciones. Mi enfoque es demostrarte lo contrario: con la estrategia correcta, la IA es la herramienta más rentable para optimizar tus recursos y potenciar tu crecimiento.</p>
-                 </div>
-            </div>
+        <div class="desmitificando-content">
+             <img src="assets/img/heading-img.png" alt="Icono EstrategiaIA">
+             <h3>Desmitificando la IA para PYMES</h3>
+             <p>Muchos creen que la IA es cara, compleja o solo para grandes corporaciones. Mi enfoque es demostrarte lo contrario: con la estrategia correcta, la IA es la herramienta más rentable para optimizar tus recursos y potenciar tu crecimiento.</p>
         </div>
     </div>
 </section>
@@ -417,3 +442,4 @@
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
