@@ -127,6 +127,7 @@
             background-color: #f7f7f7; 
             padding: 50px 0; 
             margin-top: 50px;
+            border-radius: 12px; /* Añadir bordes redondeados */
         }
         .bundle-section p {
             color: #555555;
@@ -155,6 +156,43 @@
          }
          ul.list-style b {
              color: #333333; /* Texto principal */
+         }
+
+         /* === ESTILOS PRECIO REFERENCIAL === */
+         .price-container {
+             margin-top: 1.5rem; /* Espacio antes del precio */
+             text-align: center; /* Centra los elementos */
+         }
+         .price-tag {
+             display: inline-block; /* Permite poner etiquetas una al lado de la otra */
+             padding: 5px 15px;
+             border-radius: 20px;
+             font-size: 0.8em;
+             font-weight: bold;
+             margin-bottom: 5px; /* Espacio entre tag y precio */
+         }
+         .price-launch {
+             background-color: #008f39; /* Verde más oscuro para la etiqueta */
+             color: #ffffff;
+         }
+         .price-ref {
+             background-color: #6c757d; /* Gris para la etiqueta */
+             color: #ffffff;
+         }
+         .price-amount {
+             font-size: 1.8em; /* Tamaño grande para el precio */
+             font-weight: bold;
+             display: block; /* Asegura que esté en su línea */
+             margin-top: 5px;
+         }
+         .price-launch-amount {
+             color: #008f39; /* Verde oscuro para el precio */
+         }
+         .price-ref-amount {
+             color: #6c757d; /* Gris para el precio */
+             text-decoration: line-through; /* Tachado */
+             font-size: 1.4em; /* Ligeramente más pequeño */
+             margin-left: 15px; /* Espacio entre precios */
          }
     </style>
 
@@ -246,13 +284,16 @@
       <p class="lead">Diseñadas para integrar la IA en tu negocio de forma estratégica, aumentando la eficiencia y la rentabilidad.</p>
     </div>
     
-    <div style="background-color: #f7f7f7; padding: 50px 0; border-radius: 12px;"> <div class="container">
+    <div style="background-color: #f7f7f7; padding: 50px 0; border-radius: 12px;"> 
+        <div class="container">
             <div class="heading two">
                 <h3>1. PLANES DE DIAGNÓSTICO</h3>
                 <h2>El punto de partida para una hoja de ruta clara.</h2>
             </div>
             <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6 mb-4"> <div class="consulting"> <h3>Diagnóstico Express</h3>
+              <div class="col-lg-4 col-md-6 mb-4"> 
+                <div class="consulting"> 
+                  <h3>Diagnóstico Express</h3>
                   <p>Identificaremos los dos cuellos de botella que frenan tu crecimiento y te entregaremos 3 oportunidades claras para mejorar, con un plan de acción priorizado para empezar ya.</p>
                   <h4 class="mt-4">Precio: $300.000 CLP</h4>
                 </div>
@@ -260,14 +301,14 @@
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="consulting">
                   <h3>Diagnóstico Esencial</h3>
-                   <p>Analizaremos 3 procesos clave para encontrar dónde optimizar, descubrirás 3 mejoras rápidas y definiremos 1 proyecto estratégico para transformar un área clave. Recibirás una hoja de ruta con hitos mensuales para asegurar el progreso.</p>
+                  <p>Analizaremos 3 procesos clave para encontrar dónde optimizar, descubrirás 3 mejoras rápidas y definiremos 1 proyecto estratégico para transformar un área clave. Recibirás una hoja de ruta con hitos mensuales para asegurar el progreso.</p>
                    <h4 class="mt-4">Precio: $450.000 CLP</h4>
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="consulting">
                   <h3>Diagnóstico Integral</h3>
-                   <p>Realizaremos un análisis profundo de tu negocio, identificando 3 mejoras cruciales y definiendo 3 proyectos de transformación para un crecimiento sostenido, con un plan detallado y específico para cada área de tu empresa.</p>
+                  <p>Realizaremos un análisis profundo de tu negocio, identificando 3 mejoras cruciales y definiendo 3 proyectos de transformación para un crecimiento sostenido, con un plan detallado y específico para cada área de tu empresa.</p>
                    <h4 class="mt-4">Precio: $650.000 CLP</h4>
                 </div>
               </div>
@@ -284,21 +325,22 @@
           <div class="col-lg-5 col-md-6 mb-4">
             <div class="consulting">
               <h3>Acompañamiento Esencial</h3>
-               <p>Tendrás un tablero de control para visualizar la salud de tu negocio en tiempo real y anticiparte a los problemas, además de coaching personalizado y revisiones quincenales para mantener el rumbo.</p>
+              <p>Tendrás un tablero de control para visualizar la salud de tu negocio en tiempo real y anticiparte a los problemas, además de coaching personalizado y revisiones quincenales para mantener el rumbo.</p>
               <h4 class="mt-4">$350.000 CLP/mes</h4>
             </div>
           </div>
           <div class="col-lg-5 col-md-6 mb-4">
             <div class="consulting">
               <h3>Acompañamiento Integral</h3>
-               <p>Dispondrás de un panel avanzado con proyecciones futuras para tomar decisiones más informadas, coaching estratégico quincenal, tu propio Asistente Hoshin IA para seguimiento, y un chequeo avanzado de la salud de tu implementación.</p>
+              <p>Dispondrás de un panel avanzado con proyecciones futuras para tomar decisiones más informadas, coaching estratégico quincenal, tu propio Asistente Hoshin IA para seguimiento, y un chequeo avanzado de la salud de tu implementación.</p>
                <h4 class="mt-4">$550.000 CLP/mes</h4>
             </div>
           </div>
         </div>
     </div>
 
-    <div class="bundle-section"> <div class="container">
+    <div class="bundle-section"> 
+        <div class="container">
             <div class="heading two">
                 <h3>3. PAQUETES DE TRANSFORMACIÓN (BUNDLES)</h3>
                 <h2>Aprovecha nuestras ofertas combinadas para una transformación integral.</h2>
@@ -336,7 +378,16 @@
                     <li><i><img src="assets/img/check.png" alt="check"></i><b>Construiremos tu sistema de trabajo inteligente</b> paso a paso en 3 sesiones prácticas (90 min c/u), implementando herramientas y flujos con IA.</li>
                     <li><i><img src="assets/img/check.png" alt="check"></i><b>Te llevarás un Kit de Empoderamiento</b> con manuales y plantillas claras para que gestiones tu sistema con autonomía.</li>
                 </ul>
-                <h4 class="mt-4" style="color:#333333; font-weight:bold;">Precio de Lanzamiento: $250.000 + IVA</h4>
+                <div class="price-container">
+                    <div style="display:inline-block; margin-right: 15px;">
+                        <span class="price-tag price-launch">Precio de Lanzamiento</span>
+                        <span class="price-amount price-launch-amount">$250.000 CLP + IVA</span>
+                    </div>
+                    <div style="display:inline-block;">
+                        <span class="price-tag price-ref">Precio Referencial</span>
+                        <span class="price-amount price-ref-amount">$500.000 CLP + IVA</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -344,7 +395,8 @@
 </section>
 <section class="gap ready-to" style="background-image: url(https://via.placeholder.com/1920x691);">
   <div class="container">
-    <div class="ready-to-text text-center"> <p>IA práctica, aplicable y rentable</p>
+    <div class="ready-to-text text-center"> 
+      <p>IA práctica, aplicable y rentable</p>
       <h2>¿Listo para llevar tu eficiencia al siguiente nivel?</h2>
     </div>
     <div class="work-consulting">
