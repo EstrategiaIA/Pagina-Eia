@@ -256,31 +256,7 @@
             flex-grow: 1; /* Empuja el footer del post hacia abajo */
         }
 
-        /* 2. Newsletter Widget */
-        .newsletter-widget {
-            background-color: #F0FFF0; /* Fondo verde muy claro */
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #E0E0E0;
-        }
-        .newsletter-widget p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        .newsletter-widget input[type="email"] {
-            width: 100%;
-            border: 1px solid #E0E0E0;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        .newsletter-widget .button {
-            width: 100%;
-            padding: 12px !important;
-        }
-
-        /* 3. Social Share Buttons */
+        /* 2. Social Share Buttons */
         .social-share-buttons {
             display: flex;
             gap: 10px;
@@ -508,18 +484,6 @@
                     </div>
                 </li>
             </ul>
-
-            <div class="widget-title" style="margin-top: 40px;">
-              <h3>Newsletter</h3>
-              <div class="boder"></div>
-            </div>
-            <div class="newsletter-widget">
-              <p>Recibe análisis y guías de IA directo en tu email.</p>
-              <div>
-                <input type="email" id="newsletter-email" name="email" placeholder="Tu correo electrónico" required>
-                <button type="button" id="newsletter-submit" class="button">Suscribirme</button>
-              </div>
-            </div>
             </div>
       </div>
     </div>
@@ -604,25 +568,9 @@
 </div>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/swiper.js"></script>
-<script src="assetsjs/jquery.nice-select.min.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
 <script src="assets/js/jquery.fancybox.min.js"></script>
 <script src="assets/js/custom.js"></script>
 
-<script>
-document.getElementById('newsletter-submit').addEventListener('click', function() {
-  var email = document.getElementById('newsletter-email').value;
-  if (email && email.includes('@')) { // Validación simple
-    var subject = "Nueva suscripción NewsLetter";
-    var body = "Por favor, suscribir la siguiente dirección de correo: " + email;
-    var mailtoLink = "mailto:contacto@estrategiaia.cl"
-                     + "?subject=" + encodeURIComponent(subject)
-                     + "&body=" + encodeURIComponent(body);
-    window.location.href = mailtoLink;
-  } else {
-    alert("Por favor, ingresa una dirección de correo válida.");
-  }
-});
-</script>
 </body>
 </html>
-
