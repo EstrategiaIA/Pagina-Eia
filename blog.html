@@ -231,6 +231,13 @@
           background-color: #51c259;
           color: #ffffff;
         }
+        
+        /* FIX: Ocultar pseudo-elementos (imágenes rotas) de la categoría */
+        .our-blog.blog-two > span::before,
+        .our-blog.blog-two > span::after {
+            display: none !important;
+            content: none !important;
+        }
 
         /* === ESTILOS BLOG (NUEVOS) === */
 
@@ -382,7 +389,7 @@
     </div>
 </section>
 
-<section class="gap">
+<section class="gap" style="padding-top: 60px;">
   <div class="container">
 
     <div class="row justify-content-center">
@@ -402,13 +409,15 @@
                   </figure>
                   <span>Estrategia de Negocios</span>
                   <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> </div>
+                    <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
+                  </div>
                   <h3><a href="blog-ia-para-pymes.html">¿Está tu PYME preparada para la IA? 5 señales clave y cómo empezar sin morir en el intento.</a></h3>
                   <p>Descubre si tu empresa está lista para dar el salto a la Inteligencia Artificial. Analizamos las señales que indican que es el momento de actuar y te ofrecemos una hoja de ruta práctica para iniciar la transformación digital sin grandes inversiones iniciales.</p>
                   <div class="our-admin">
                     <div class="admin-name">
                       <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> </div>
+                      <h6>Felipe Becerra Tellez</h6> 
+                    </div>
                     <div class="social-share-buttons">
                       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                       <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -425,13 +434,15 @@
                   </figure>
                   <span>Business Intelligence</span>
                   <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> </div>
+                    <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
+                  </div>
                   <h3><a href="blog-datos-al-crecimiento.html">De los Datos al Crecimiento: Cómo transformar la información de tu PYME en una ventaja competitiva.</a></h3>
                   <p>Tu empresa genera datos todos los días. Aprende a convertir esa información en decisiones estratégicas que impulsen el crecimiento. Te mostramos el camino para implementar una cultura de datos y las herramientas para lograrlo.</p>
                   <div class="our-admin">
                     <div class="admin-name">
                       <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> </div>
+                      <h6>Felipe Becerra Tellez</h6> 
+                    </div>
                      <div class="social-share-buttons">
                       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                       <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -448,13 +459,15 @@
                   </figure>
                   <span>Productividad</span>
                   <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> </div>
+                    <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
+                  </div>
                   <h3><a href="blog-prompting-superpoder.html">El Prompting: El nuevo superpoder para profesionales que quieren recuperar 10 horas a la semana.</a></h3>
                   <p>La habilidad de "hablar" con la IA es la nueva competencia clave. Te explicamos qué es el prompting y cómo dominarlo puede automatizar tus tareas, eliminar la sobrecarga de trabajo y devolverte el tiempo para enfocarte en lo que realmente importa.</p>
                   <div class="our-admin">
                     <div class="admin-name">
                       <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> </div>
+                      <h6>Felipe Becerra Tellez</h6> 
+                    </div>
                      <div class="social-share-buttons">
                       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                       <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -477,19 +490,22 @@
                     <img alt="recent-posts-img" src="https://via.placeholder.com/75x75?text=IA-PYME">
                     <div class="text-hover">
                         <a href="blog-ia-para-pymes.html">¿Está tu PYME preparada para la IA?</a>
-                        <span>Octubre 28, 2025</span> </div>
+                        <span>Octubre 28, 2025</span> 
+                    </div>
                 </li>
                 <li>
                     <img alt="recent-posts-img" src="https://via.placeholder.com/75x75?text=Datos">
                     <div class="text-hover">
                         <a href="blog-datos-al-crecimiento.html">De los Datos al Crecimiento.</a>
-                        <span>Octubre 15, 2025</span> </div>
+                        <span>Octubre 15, 2025</span> 
+                    </div>
                 </li>
                 <li>
                     <img alt="recent-posts-img" src="https://via.placeholder.com/75x75?text=Prompting">
                     <div class="text-hover"> 
                         <a href="blog-prompting-superpoder.html">El Prompting: El nuevo superpoder.</a>
-                        <span>Septiembre 30, 2025</span> </div>
+                        <span>Septiembre 30, 2025</span> 
+                    </div>
                 </li>
             </ul>
 
@@ -499,10 +515,10 @@
             </div>
             <div class="newsletter-widget">
               <p>Recibe análisis y guías de IA directo en tu email.</p>
-              <form action="#" method="post">
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                <button type="submit" class="button">Suscribirme</button>
-              </form>
+              <div>
+                <input type="email" id="newsletter-email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="button" id="newsletter-submit" class="button">Suscribirme</button>
+              </div>
             </div>
             </div>
       </div>
@@ -588,9 +604,25 @@
 </div>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/swiper.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assetsjs/jquery.nice-select.min.js"></script>
 <script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assetsDjs/custom.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script>
+document.getElementById('newsletter-submit').addEventListener('click', function() {
+  var email = document.getElementById('newsletter-email').value;
+  if (email && email.includes('@')) { // Validación simple
+    var subject = "Nueva suscripción NewsLetter";
+    var body = "Por favor, suscribir la siguiente dirección de correo: " + email;
+    var mailtoLink = "mailto:contacto@estrategiaia.cl"
+                     + "?subject=" + encodeURIComponent(subject)
+                     + "&body=" + encodeURIComponent(body);
+    window.location.href = mailtoLink;
+  } else {
+    alert("Por favor, ingresa una dirección de correo válida.");
+  }
+});
+</script>
 </body>
 </html>
 
