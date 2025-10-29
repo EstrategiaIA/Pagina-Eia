@@ -119,7 +119,7 @@
         .bundle-section p { color: #555555; margin-bottom: 1rem; }
          .bundle-section strong { color: #333333; }
 
-        /* Estilo lista programa profesionales */
+        /* Estilo lista programa profesionales (Antiguo - Conservado por si acaso) */
          ul.list-style i { background-color: #51c259 !important; display: flex; align-items: center; justify-content: center; padding: 5px; border-radius: 50%; width: 30px; height: 30px; flex-shrink: 0; }
          ul.list-style i img { filter: brightness(0) invert(1); width: 16px; height: 16px; }
          ul.list-style li { color: #555555; display: flex; align-items: flex-start; margin-bottom: 1rem; }
@@ -137,75 +137,137 @@
          .price-amount { font-size: 1.8em; font-weight: bold; display: block; margin-top: 5px; }
          .price-launch-amount { color: #008f39; }
          .price-ref-amount { color: #6c757d; text-decoration: line-through; font-size: 1.4em; margin-left: 15px; display: inline-block; /* Asegura alineación */ vertical-align: middle; /* Alinea verticalmente */ }
+    
+         /* === ESTILOS SECCION PROFESIONALES (NUEVO) === */
+        .profesional-step-box {
+            background-color: #FFFFFF;
+            border: 2px solid #E0F8E0; /* Borde verde claro */
+            border-radius: 12px;
+            padding: 30px 25px;
+            display: flex;
+            align-items: flex-start;
+            height: 100%; /* Para que las cajas tengan la misma altura */
+            transition: all 0.3s ease;
+        }
+        .profesional-step-box:hover {
+            border-color: #51c259; /* Verde corporativo al pasar el mouse */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        .profesional-step-box .step-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #51c259;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        .profesional-step-box .step-content h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 8px;
+            text-align: left; /* Asegura alineación izquierda */
+        }
+        .profesional-step-box .step-content p {
+            color: #555555;
+            margin-bottom: 0;
+            text-align: left; /* Asegura alineación izquierda */
+            font-size: 0.95rem; /* Ajuste fino de texto */
+            line-height: 1.6;
+        }
+        /* Centrar texto introductorio */
+        #profesionales .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+        #profesionales .intro-text h3 {
+             font-size: 1.8rem;
+             color: #333;
+             margin-bottom: 10px;
+             font-weight: 700;
+        }
+        #profesionales .intro-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
     </style>
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/loaded.js"></script>
 </head>
-<body class="header-light"> 
 
-<div class="preloader">
-  <div class="loader"></div>
-</div>
-<header class="header-light"> 
-  <div class="container">
-    <div class="top-bar-slid">
-      <div>
-        <div class="phone-data">
-          <div class="phone">
-            <i>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                <path d="M0,81v350h512V81H0z M456.952,111L256,286.104L55.047,111H456.952z M30,128.967l134.031,116.789L30,379.787V128.967z
+<body class="header-light">
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <header class="header-light">
+    <div class="container">
+      <div class="top-bar-slid">
+        <div>
+          <div class="phone-data">
+            <div class="phone">
+              <i>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                  <path d="M0,81v350h512V81H0z M456.952,111L256,286.104L55.047,111H456.952z M30,128.967l134.031,116.789L30,379.787V128.967z
                   M51.213,401l135.489-135.489L256,325.896l69.298-60.384L460.787,401H51.213z M482,379.788L347.969,245.756L482,128.967V379.788z"></path>
-              </svg>
-            </i><span>Email:</span><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a>
-          </div>
-          <div class="phone d-flax align-items-center">
-            <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                  </svg>
-            </i>
-            <span>WhatsApp:</span>
-            <a class="me-3" href="https://wa.me/56941102950">+56 9 4110 2950</a>
+                </svg>
+              </i><span>Email:</span><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a>
+            </div>
+            <div class="phone d-flax align-items-center">
+              <i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+              </i>
+              <span>WhatsApp:</span>
+              <a class="me-3" href="https://wa.me/56941102950">+56 9 4110 2950</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="bottom-bar">
-    <div class="container">
-        <div class="bottom-bar-text">
-          <a href="index.html"><img src="assets/img/logo.png?v=1.1" alt="Logo EstrategiaIA" style="max-height: 50px; width: auto;"></a>
-          <div class="boder-nav">
-            <nav class="navbar">
-            <ul class="navbar-links">
-                      <li><a href="index.html">Inicio</a></li>
-                      <li class="navbar-dropdown menu-item-children">
-                        <a href="soluciones.html">Soluciones</a>
-                        <div class="dropdown">
-                          <a href="soluciones.html#empresas">Para Empresas (PYMES)</a>
-                          <a href="soluciones.html#profesionales">Para Profesionales y Líderes</a>
-                        </div>
-                      </li>
-                      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                      <li><a href="casos-de-exito.html">Casos de Éxito</a></li>
-                      <li><a href="blog.html">Blog / Recursos</a></li>
-                      <li><a href="contact.html">Contacto</a></li>
-            </ul>
-          </nav>
-            <div class="menu-end">
-              <a href="contact.html" class="button">Conversemos</a>
-            </div>
-        </div>
-        <div class="bar-menu">
-              <i class="fa-solid fa-bars"></i>
-            </div>
+    <div class="bottom-bar">
+      <div class="container">
+          <div class="bottom-bar-text">
+            <a href="index.html"><img src="assets/img/logo.png?v=1.1" alt="Logo EstrategiaIA" style="max-height: 50px; width: auto;"></a>
+            <div class="boder-nav">
+              <nav class="navbar">
+              <ul class="navbar-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="navbar-dropdown menu-item-children">
+                          <a href="soluciones.html">Soluciones</a>
+                          <div class="dropdown">
+                            <a href="soluciones.html#empresas">Para Empresas (PYMES)</a>
+                            <a href="soluciones.html#profesionales">Para Profesionales y Líderes</a>
+                          </div>
+                        </li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="casos-de-exito.html">Casos de Éxito</a></li>
+                        <li><a href="blog.html">Blog / Recursos</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+              </ul>
+            </nav>
+              <div class="menu-end">
+                <a href="contact.html" class="button">Conversemos</a>
+              </div>
+          </div>
+          <div class="bar-menu">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+      </div>
+      </div>
     </div>
-    </div>
-  </div>
-</header>
-<section class="banner" style="background-image: url(https://via.placeholder.com/1920x535);">
+  </header>
+  <section class="banner" style="background-image: url(https://via.placeholder.com/1920x535);">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
@@ -215,216 +277,229 @@
             </div>
         </div>
     </div>
-</section>
-
-<section id="empresas" class="gap">
-  <div class="container">
-    <div class="heading text-center mb-5">
-      <h2 style="font-size: 2.5rem; font-weight: 700;">Para tu Empresa: Soluciones Estratégicas</h2>
-      <p class="lead">Diseñadas para integrar la IA en tu negocio de forma estratégica, aumentando la eficiencia y la rentabilidad.</p>
-    </div>
-    
-    <div style="background-color: #f7f7f7; padding: 50px 0; border-radius: 12px;"> 
-        <div class="container">
-            <div class="heading two">
-                <h3>1. PLANES DE DIAGNÓSTICO</h3>
-                <h2>El punto de partida para una hoja de ruta clara.</h2>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6 mb-4"> 
-                <div class="consulting"> 
-                  <h3>Diagnóstico Express</h3>
-                  <p>Identificaremos los dos cuellos de botella que frenan tu crecimiento y te entregaremos 3 oportunidades claras para mejorar, con un plan de acción priorizado para empezar ya.</p>
-                  <h4 class="mt-4">Precio: $300.000 CLP</h4>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="consulting">
-                  <h3>Diagnóstico Esencial</h3>
-                  <p>Analizaremos 3 procesos clave para encontrar dónde optimizar, descubrirás 3 mejoras rápidas y definiremos 1 proyecto estratégico para transformar un área clave. Recibirás una hoja de ruta con hitos mensuales para asegurar el progreso.</p>
-                   <h4 class="mt-4">Precio: $450.000 CLP</h4>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="consulting">
-                  <h3>Diagnóstico Integral</h3>
-                  <p>Realizaremos un análisis profundo de tu negocio, identificando 3 mejoras cruciales y definiendo 3 proyectos de transformación para un crecimiento sostenido, con un plan detallado y específico para cada área de tu empresa.</p>
-                   <h4 class="mt-4">Precio: $650.000 CLP</h4>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-5">
-        <div class="heading two">
-            <h3>2. ACOMPAÑAMIENTO CONTINUO (RETAINERS)</h3>
-            <h2>Aseguramos la correcta implementación y el éxito a largo plazo.</h2>
-        </div>
-         <div class="row justify-content-center">
-          <div class="col-lg-5 col-md-6 mb-4">
-            <div class="consulting">
-              <h3>Acompañamiento Esencial</h3>
-              <p>Tendrás un tablero de control para visualizar la salud de tu negocio en tiempo real y anticiparte a los problemas, además de coaching personalizado y revisiones quincenales para mantener el rumbo.</p>
-              <h4 class="mt-4">$350.000 CLP/mes</h4>
-            </div>
-          </div>
-          <div class="col-lg-5 col-md-6 mb-4">
-            <div class="consulting">
-              <h3>Acompañamiento Integral</h3>
-              <p>Dispondrás de un panel avanzado con proyecciones futuras para tomar decisiones más informadas, coaching estratégico quincenal, tu propio Asistente Hoshin IA para seguimiento, y un chequeo avanzado de la salud de tu implementación.</p>
-               <h4 class="mt-4">$550.000 CLP/mes</h4>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="bundle-section"> 
-        <div class="container">
-            <div class="heading two">
-                <h3>3. PAQUETES DE TRANSFORMACIÓN (BUNDLES)</h3>
-                <h2>Aprovecha nuestras ofertas combinadas para una transformación integral.</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6"><p><strong>- Combo Estrategia Esencial (3 meses):</strong> Diagnóstico Esencial + 3 meses de Acompañamiento Esencial.</p></div>
-                <div class="col-lg-6"><p><strong>- Combo Estrategia Integral (3 meses):</strong> Diagnóstico Integral + 3 meses de Acompañamiento Integral.</p></div>
-                <div class="col-lg-6"><p><strong>- Bundle IA Básico:</strong> Diagnóstico Esencial + 2 Talleres de IA Básica + 1 mes de Acompañamiento Esencial.</p></div>
-                <div class="col-lg-6"><p><strong>- Bundle IA Avanzado:</strong> Diagnóstico Integral + 2 Talleres Asistentes Hoshin + 1 mes de Acompañamiento Integral.</p></div>
-            </div>
-        </div>
-    </div>
-  </div>
-</section>
-<section id="profesionales" class="gap">
-  <div class="container">
-    <div class="heading text-center mb-5">
-      <h2 style="font-size: 2.5rem; font-weight: 700;">Para tu Carrera: Productividad Aumentada</h2>
-      <p class="lead">Recupera entre 5 y 10 horas de trabajo a la semana y enfócate en el trabajo de alto impacto.</p>
-    </div>
-    <div class="row align-items-center">
-        <div class="col-lg-6">
-            <div class="mscs-scaled img-hover">
-                <figure>
-                    <img src="https://via.placeholder.com/642x325" alt="Productividad Aumentada con IA"> 
-                </figure>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="ps-lg-4">
-                <h3>¿Cómo lo logramos?</h3>
-                <p>No es un curso teórico. Es un programa práctico y personalizado donde construimos juntos tu propio sistema de trabajo inteligente.</p>
-                <ul class="list-style mt-4">
-                    <li>
-                      <i><img src="assets/img/check.png" alt="check"></i>
-                      <div><b>Descubriremos juntos dónde se te escapan las horas</b> para que puedas recuperarlas, mediante un diagnóstico 360° online.</div>
-                    </li>
-                    <li>
-                      <i><img src="assets/img/check.png" alt="check"></i>
-                      <div><b>Definiremos tu hoja de ruta personalizada</b> en una sesión estratégica (45 min) basada en tu diagnóstico.</div>
-                    </li>
-                    <li>
-                      <i><img src="assets/img/check.png" alt="check"></i>
-                      <div><b>Construiremos tu sistema de trabajo inteligente</b> paso a paso en 3 sesiones prácticas (90 min c/u), implementando herramientas y flujos con IA.</div>
-                    </li>
-                    <li>
-                      <i><img src="assets/img/check.png" alt="check"></i>
-                      <div><b>Te llevarás un Kit de Empoderamiento</b> con manuales y plantillas claras para que gestiones tu sistema con autonomía.</div>
-                    </li>
-                </ul>
-                <div class="price-container">
-                    <div style="display:inline-block; margin-right: 15px;">
-                        <span class="price-tag price-launch">Precio de Lanzamiento</span>
-                        <span class="price-amount price-launch-amount">$250.000 CLP + IVA</span>
-                    </div>
-                    <div style="display:inline-block;">
-                        <span class="price-tag price-ref">Precio Referencial</span>
-                        <span class="price-amount price-ref-amount">$500.000 CLP + IVA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</section>
-<section class="gap ready-to" style="background-image: url(https://via.placeholder.com/1920x691);">
-  <div class="container">
-    <div class="ready-to-text text-center"> 
-      <p>IA práctica, aplicable y rentable</p>
-      <h2>¿Listo para llevar tu eficiencia al siguiente nivel?</h2>
-    </div>
-    <div class="work-consulting">
-        <a href="contact.html" class="button">Contáctanos para una Asesoría Personalizada</a>
-    </div>
-  </div>
-</section>
-
-<footer class="gap no-bottom" style="background-image:url(https://via.placeholder.com/1920x750)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="logo">
-          <a href="index.html">
-            <img alt="Logo EstrategiaIA" src="assets/img/logo.png?v=1.1" style="max-height: 50px; width: auto;">
-          </a>
-          <p>Un socio estratégico para desmitificar y aplicar la Inteligencia Artificial, generando valor real y sostenible para tu negocio o carrera profesional.</p>
-        </div>
+  </section>
+  <section id="empresas" class="gap">
+    <div class="container">
+      <div class="heading text-center mb-5">
+        <h2 style="font-size: 2.5rem; font-weight: 700;">Para tu Empresa: Soluciones Estratégicas</h2>
+        <p class="lead">Diseñadas para integrar la IA en tu negocio de forma estratégica, aumentando la eficiencia y la rentabilidad.</p>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="widget-title">
-          <h3>Contacto</h3>
-          <div class="boder"></div>
-          <div class="get-in-touch">
-            <i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+      
+      <div style="background-color: #f7f7f7; padding: 50px 0; border-radius: 12px;">
+          <div class="container">
+              <div class="heading two">
+                  <h3>1. PLANES DE DIAGNÓSTICO</h3>
+                  <h2>El punto de partida para una hoja de ruta clara.</h2>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="consulting">
+                    <h3>Diagnóstico Express</h3>
+                    <p>Identificaremos los dos cuellos de botella que frenan tu crecimiento y te entregaremos 3 oportunidades claras para mejorar, con un plan de acción priorizado para empezar ya.</p>
+                    <h4 class="mt-4">Precio: $300.000 CLP</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="consulting">
+                    <h3>Diagnóstico Esencial</h3>
+                    <p>Analizaremos 3 procesos clave para encontrar dónde optimizar, descubrirás 3 mejoras rápidas y definiremos 1 proyecto estratégico para transformar un área clave. Recibirás una hoja de ruta con hitos mensuales para asegurar el progreso.</p>
+                     <h4 class="mt-4">Precio: $450.000 CLP</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="consulting">
+                    <h3>Diagnóstico Integral</h3>
+                    <p>Realizaremos un análisis profundo de tu negocio, identificando 3 mejoras cruciales y definiendo 3 proyectos de transformación para un crecimiento sostenido, con un plan detallado y específico para cada área de tu empresa.</p>
+                     <h4 class="mt-4">Precio: $650.000 CLP</h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container mt-5">
+          <div class="heading two">
+              <h3>2. ACOMPAÑAMIENTO CONTINUO (RETAINERS)</h3>
+              <h2>Aseguramos la correcta implementación y el éxito a largo plazo.</h2>
+          </div>
+           <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="consulting">
+                <h3>Acompañamiento Esencial</h3>
+                <p>Tendrás un tablero de control para visualizar la salud de tu negocio en tiempo real y anticiparte a los problemas, además de coaching personalizado y revisiones quincenales para mantener el rumbo.</p>
+                <h4 class="mt-4">$350.000 CLP/mes</h4>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="consulting">
+                <h3>Acompañamiento Integral</h3>
+                <p>Dispondrás de un panel avanzado con proyecciones futuras para tomar decisiones más informadas, coaching estratégico quincenal, tu propio Asistente Hoshin IA para seguimiento, y un chequeo avanzado de la salud de tu implementación.</p>
+                 <h4 class="mt-4">$550.000 CLP/mes</h4>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="bundle-section">
+          <div class="container">
+              <div class="heading two">
+                  <h3>3. PAQUETES DE TRANSFORMACIÓN (BUNDLES)</h3>
+                  <h2>Aprovecha nuestras ofertas combinadas para una transformación integral.</h2>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6"><p><strong>- Combo Estrategia Esencial (3 meses):</strong> Diagnóstico Esencial + 3 meses de Acompañamiento Esencial.</p></div>
+                  <div class="col-lg-6"><p><strong>- Combo Estrategia Integral (3 meses):</strong> Diagnóstico Integral + 3 meses de Acompañamiento Integral.</p></div>
+                  <div class="col-lg-6"><p><strong>- Bundle IA Básico:</strong> Diagnóstico Esencial + 2 Talleres de IA Básica + 1 mes de Acompañamiento Esencial.</p></div>
+                  <div class="col-lg-6"><p><strong>- Bundle IA Avanzado:</strong> Diagnóstico Integral + 2 Talleres Asistentes Hoshin + 1 mes de Acompañamiento Integral.</p></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="profesionales" class="gap">
+    <div class="container">
+      <div class="heading text-center mb-5">
+        <h2 style="font-size: 2.5rem; font-weight: 700;">Para tu Carrera: Productividad Aumentada</h2>
+        <p class="lead">Recupera entre 5 y 10 horas de trabajo a la semana y enfócate en el trabajo de alto impacto.</p>
+      </div>
+      
+      <div class="intro-text">
+          <h3>¿Cómo lo logramos?</h3>
+          <p>No es un curso teórico. Es un programa práctico y personalizado donde construimos juntos tu propio sistema de trabajo inteligente.</p>
+      </div>
+  
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-6 mb-4">
+              <div class="profesional-step-box">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                      <h4>Diagnóstico 360° de Productividad</h4>
+                      <p>A través de un cuestionario online inteligente, identificamos tus principales "ladrones de tiempo" y las oportunidades de automatización en tu día a día.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 mb-4">
+               <div class="profesional-step-box">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                      <h4>Sesión de Alineamiento Estratégico (45 min)</h4>
+                      <p>Revisamos tu diagnóstico y te presentamos una hoja de ruta personalizada para alcanzar tus metas de productividad.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 mb-4">
+               <div class="profesional-step-box">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                      <h4>Implementación Guiada (3 sesiones de 90 min c/u)</h4>
+                      <p>En tres sesiones prácticas, te guiamos paso a paso para que implementes las herramientas y flujos de trabajo con IA que resolverán tus problemas específicos.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 mb-4">
+               <div class="profesional-step-box">
+                  <div class="step-number">4</div>
+                  <div class="step-content">
+                      <h4>Kit de Empoderamiento Personalizado</h4>
+                      <p>Recibes todos los manuales, plantillas y recursos creados específicamente para ti, asegurando que puedas mantener y mejorar tu nuevo sistema de forma autónoma.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="price-container">
+          <div style="display:inline-block; margin-right: 15px;">
+              <span class="price-tag price-launch">Precio de Lanzamiento</span>
+              <span class="price-amount price-launch-amount">$250.000 CLP + IVA</span>
+          </div>
+          <div style="display:inline-block;">
+              <span class="price-tag price-ref">Precio Referencial</span>
+              <span class="price-amount price-ref-amount">$500.000 CLP + IVA</span>
+          </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <section class="gap ready-to" style="background-image: url(https://via.placeholder.com/1920x691);">
+    <div class="container">
+      <div class="ready-to-text text-center">
+        <p>IA práctica, aplicable y rentable</p>
+        <h2>¿Listo para llevar tu eficiencia al siguiente nivel?</h2>
+      </div>
+      <div class="work-consulting">
+          <a href="contact.html" class="button">Contáctanos para una Asesoría Personalizada</a>
+      </div>
+    </div>
+  </section>
+  <footer class="gap no-bottom" style="background-image:url(https://via.placeholder.com/1920x750)">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="logo">
+            <a href="index.html">
+              <img alt="Logo EstrategiaIA" src="assets/img/logo.png?v=1.1" style="max-height: 50px; width: auto;">
+            </a>
+            <p>Un socio estratégico para desmitificar y aplicar la Inteligencia Artificial, generando valor real y sostenible para tu negocio o carrera profesional.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="widget-title">
+            <h3>Contacto</h3>
+            <div class="boder"></div>
+            <div class="get-in-touch">
+              <i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>
+              </i>
+              <div>
+                <span>WhatsApp</span>
+                <h6><a href="https://wa.me/56941102950">+56 9 4110 2950</a></h6>
+              </div>
+            </div>
+            <div class="get-in-touch mb-0">
+              <i>
+                <svg width="60" height="40" viewBox="0 0 22 18" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.8649 18H6.13513C2.58377 18 0.540527 15.9568 0.540527 12.4054V5.5946C0.540527 2.04324 2.58377 0 6.13513 0H15.8649C19.4162 0 21.4595 2.04324 21.4595 5.5946V12.4054C21.4595 15.9568 19.4162 18 15.8649 18ZM6.13513 1.45946C3.35242 1.45946 1.99999 2.81189 1.99999 5.5946V12.4054C1.99999 15.1881 3.35242 16.5406 6.13513 16.5406H15.8649C18.6476 16.5406 20 15.1881 20 12.4054V5.5946C20 2.81189 18.6476 1.45946 15.8649 1.45946H6.13513Z"></path>
+                    <path d="M10.9988 9.8465C10.1815 9.8465 9.35452 9.59352 8.72208 9.07785L5.67668 6.64539C5.36532 6.39241 5.30696 5.93511 5.55992 5.62376C5.8129 5.31241 6.2702 5.25403 6.58155 5.50701L9.62695 7.93947C10.3664 8.53298 11.6215 8.53298 12.361 7.93947L15.4064 5.50701C15.7178 5.25403 16.1848 5.30268 16.428 5.62376C16.681 5.93511 16.6324 6.40214 16.3113 6.64539L13.2659 9.07785C12.6432 9.59352 11.8161 9.8465 10.9988 9.8465Z" ></path>
                   </svg>
-            </i>
-            <div>
-              <span>WhatsApp</span> 
-              <h6><a href="https://wa.me/56941102950">+56 9 4110 2950</a></h6>
+              </i>
+              <div>
+                <span>Email</span>
+                <h6><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a></h6>
+              </div>
             </div>
-          </div>
-          <div class="get-in-touch mb-0">
-            <i>
-              <svg width="60" height="40" viewBox="0 0 22 18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.8649 18H6.13513C2.58377 18 0.540527 15.9568 0.540527 12.4054V5.5946C0.540527 2.04324 2.58377 0 6.13513 0H15.8649C19.4162 0 21.4595 2.04324 21.4595 5.5946V12.4054C21.4595 15.9568 19.4162 18 15.8649 18ZM6.13513 1.45946C3.35242 1.45946 1.99999 2.81189 1.99999 5.5946V12.4054C1.99999 15.1881 3.35242 16.5406 6.13513 16.5406H15.8649C18.6476 16.5406 20 15.1881 20 12.4054V5.5946C20 2.81189 18.6476 1.45946 15.8649 1.45946H6.13513Z"></path>
-                  <path d="M10.9988 9.8465C10.1815 9.8465 9.35452 9.59352 8.72208 9.07785L5.67668 6.64539C5.36532 6.39241 5.30696 5.93511 5.55992 5.62376C5.8129 5.31241 6.2702 5.25403 6.58155 5.50701L9.62695 7.93947C10.3664 8.53298 11.6215 8.53298 12.361 7.93947L15.4064 5.50701C15.7178 5.25403 16.1848 5.30268 16.428 5.62376C16.681 5.93511 16.6324 6.40214 16.3113 6.64539L13.2659 9.07785C12.6432 9.59352 11.8161 9.8465 10.9988 9.8465Z" ></path>
-                </svg>
-            </i>
-            <div>
-              <span>Email</span>
-              <h6><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a></h6>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="widget-title">
+            <h3>Navegación</h3>
+            <div class="boder"></div>
+              <ul class="text-hover">
+                <li><i class="fa-solid fa-angle-right"></i><a href="index.html">Inicio</a></li>
+                <li><i class="fa-solid fa-angle-right"></i><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><i class="fa-solid fa-angle-right"></i><a href="casos-de-exito.html">Casos de Éxito</a></li>
+                <li><i class="fa-solid fa-angle-right"></i><a href="blog.html">Blog</a></li>
+                <li><i class="fa-solid fa-angle-right"></i><a href="contact.html">Contacto</a></li>
+              </ul>
             </div>
-          </div>
-      </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="widget-title">
-          <h3>Navegación</h3>
-          <div class="boder"></div>
-            <ul class="text-hover">
-              <li><i class="fa-solid fa-angle-right"></i><a href="index.html">Inicio</a></li>
-              <li><i class="fa-solid fa-angle-right"></i><a href="quienes-somos.html">Quiénes Somos</a></li>
-              <li><i class="fa-solid fa-angle-right"></i><a href="casos-de-exito.html">Casos de Éxito</a></li>
-              <li><i class="fa-solid fa-angle-right"></i><a href="blog.html">Blog</a></li>
-              <li><i class="fa-solid fa-angle-right"></i><a href="contact.html">Contacto</a></li>
-            </ul>
-          </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-      <div class="container">
-        <div class="footer-bottom-text">
-          <h6>© Copyright 2025 EstrategiaIA. Todos los derechos reservados.</h6>
         </div>
       </div>
-  </div>
-</footer>
-<div id="progress">
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-text">
+            <h6>© Copyright 2025 EstrategiaIA. Todos los derechos reservados.</h6>
+          </div>
+        </div>
+    </div>
+  </footer>
+  <div id="progress">
       <span id="progress-value"><i class="fa-solid fa-up-long"></i></span>
-</div>
-<div class="search-popup">
+  </div>
+  <div class="search-popup">
       <button class="close-search"><i class="fa-solid fa-arrow-right"></i></button>
       <form method="post" action="#">
           <div class="form-group">
@@ -432,11 +507,11 @@
               <button type="submit"><i class="fa fa-search"></i></button>
           </div>
       </form>
-</div>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/swiper.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assets/js/custom.js"></script>
+  </div>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/swiper.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/jquery.fancybox.min.js"></script>
+  <script src="assets/js/custom.js"></script>
 </body>
 </html>
