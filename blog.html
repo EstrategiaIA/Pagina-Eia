@@ -227,25 +227,32 @@
         .our-blog.blog-two h3 a:hover {
           color: #51c259;
         }
-
-        /* === SOLUCIÓN "FUERA DE LA CAJA" === */
+        
+        /* === SOLUCIÓN "FUERA DE LA CAJA" (NUEVO) === */
         /* 1. Estilo para la nueva etiqueta de categoría */
         .blog-category-tag {
             background-color: #51c259;
             color: #ffffff;
             padding: 5px 18px;
-            display: inline-block; /* O inline-flex */
+            display: inline-block; 
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             line-height: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            position: relative; /* Para que esté sobre la imagen */
+            position: relative; 
             z-index: 2;
             margin-bottom: 15px;
         }
-        /* 2. Ocultar la regla del span antiguo (por si acaso) */
+        /* 2. Desactivación explícita de pseudo-elementos en la nueva clase */
+        .blog-category-tag::before,
+        .blog-category-tag::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+        /* 3. Ocultar la regla del span antiguo (por si acaso) */
         .our-blog.blog-two > span {
           display: none !important;
         }
@@ -410,7 +417,7 @@
                     </div>
                     <div class="social-share-buttons">
                       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                      <a href="httpshttps://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                     <a href="blog-ia-para-pymes.html" class="button">Leer Más</a>
                   </div>
