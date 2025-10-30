@@ -232,11 +232,12 @@
           color: #ffffff;
         }
         
-        /* FIX: Ocultar pseudo-elementos (imágenes rotas) de la categoría */
-        .our-blog.blog-two > span::before,
-        .our-blog.blog-two > span::after {
+        /* FIX: Ocultar pseudo-elementos (imágenes rotas) de la categoría - REGLA REFORZADA */
+        .our-blog.blog-two span::before,
+        .our-blog.blog-two span::after {
             display: none !important;
             content: none !important;
+            background-image: none !important;
         }
 
         /* === ESTILOS BLOG (NUEVOS) === */
@@ -484,6 +485,7 @@
                     </div>
                 </li>
             </ul>
+            
             </div>
       </div>
     </div>
@@ -568,7 +570,7 @@
 </div>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/swiper.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assetsjs/jquery.nice-select.min.js"></script>
 <script src="assets/js/jquery.fancybox.min.js"></script>
 <script src="assets/js/custom.js"></script>
 
