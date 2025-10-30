@@ -227,18 +227,30 @@
         .our-blog.blog-two h3 a:hover {
           color: #51c259;
         }
+
+        /* === SOLUCIÓN "FUERA DE LA CAJA" === */
+        /* 1. Estilo para la nueva etiqueta de categoría */
+        .blog-category-tag {
+            background-color: #51c259;
+            color: #ffffff;
+            padding: 5px 18px;
+            display: inline-block; /* O inline-flex */
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative; /* Para que esté sobre la imagen */
+            z-index: 2;
+            margin-bottom: 15px;
+        }
+        /* 2. Ocultar la regla del span antiguo (por si acaso) */
         .our-blog.blog-two > span {
-          background-color: #51c259;
-          color: #ffffff;
+          display: none !important;
         }
-        
-        /* FIX: Ocultar pseudo-elementos (imágenes rotas) de la categoría - REGLA REFORZADA */
-        body section .our-blog.blog-two span::before,
-        body section .our-blog.blog-two span::after {
-            display: none !important;
-            content: none !important;
-            background-image: none !important;
-        }
+        /* === FIN SOLUCIÓN === */
+
 
         /* === ESTILOS BLOG (NUEVOS) === */
 
@@ -384,7 +396,8 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="IA para PYMES">
                   </figure>
-                  <span>Estrategia de Negocios</span>
+                  <div class="blog-category-tag">Estrategia de Negocios</div>
+                  
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
                   </div>
@@ -409,7 +422,8 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="Business Intelligence">
                   </figure>
-                  <span>Business Intelligence</span>
+                  <div class="blog-category-tag">Business Intelligence</div>
+                  
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
                   </div>
@@ -434,7 +448,8 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="Productividad con IA">
                   </figure>
-                  <span>Productividad</span>
+                  <div class="blog-category-tag">Productividad</div>
+                  
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
                   </div>
