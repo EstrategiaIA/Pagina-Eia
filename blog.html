@@ -228,8 +228,23 @@
           color: #51c259;
         }
 
-        /* === SOLUCIÓN "FUERA DE LA CAJA" (NUEVO) === */
-        /* 1. Estilo para la etiqueta de categoría real */
+        /* === SOLUCIÓN "FUERA DE LA CAJA" (HTML Sandwich) === */
+        
+        /* 1. Estilo para el div "carnada". Lo hacemos 100% invisible */
+        .css-bug-fix-bait {
+            display: none !important;
+            content: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: absolute; /* Saca del flujo por si acaso */
+        }
+         /* 2. Ocultar el span original (el que causaba todo) */
+        .our-blog.blog-two > span {
+            display: none !important;
+        }
+        /* 3. Estilo para nuestra etiqueta de categoría (que ahora es el 3er hijo) */
         .blog-category-tag {
             background-color: #51c259;
             color: #ffffff !important; /* !important para asegurar */
@@ -241,17 +256,15 @@
             line-height: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-        /* 2. Estilo para el "wrapper" que recibe el ícono roto */
-        .category-wrapper {
-            /* Este div recibirá el ícono roto, pero no tiene tamaño ni contenido */
-            margin-bottom: 15px;
-            position: relative;
+            position: relative; 
             z-index: 2;
+            margin-bottom: 15px;
         }
-        /* 3. Ocultar el span original (por si acaso) */
-        .our-blog.blog-two > span {
-          display: none !important;
+        /* 4. Anular cualquier pseudo-elemento en nuestra etiqueta (por si acaso) */
+        .blog-category-tag::before,
+        .blog-category-tag::after {
+            display: none !important;
+            content: none !important;
         }
         /* === FIN SOLUCIÓN === */
 
@@ -401,9 +414,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="IA para PYMES">
                   </figure>
                   
-                  <div class="category-wrapper">
-                    <div class="blog-category-tag">Estrategia de Negocios</div>
-                  </div>
+                  <div class="css-bug-fix-bait"></div>
+                  <div class="blog-category-tag">Estrategia de Negocios</div>
                   
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
@@ -430,9 +442,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="Business Intelligence">
                   </figure>
 
-                  <div class="category-wrapper">
-                    <div class="blog-category-tag">Business Intelligence</div>
-                  </div>
+                  <div class="css-bug-fix-bait"></div>
+                  <div class="blog-category-tag">Business Intelligence</div>
 
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
@@ -459,9 +470,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="Productividad con IA">
                   </figure>
                   
-                  <div class="category-wrapper">
-                    <div class="blog-category-tag">Productividad</div>
-                  </div>
+                  <div class="css-bug-fix-bait"></div>
+                  <div class="blog-category-tag">Productividad</div>
                   
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
