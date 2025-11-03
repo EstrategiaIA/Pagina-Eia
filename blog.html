@@ -228,26 +228,21 @@
           color: #51c259;
         }
 
-        /* === SOLUCIÓN "FUERA DE LA CAJA" (HTML Sandwich) === */
-        
-        /* 1. Estilo para el div "carnada". Lo hacemos 100% invisible */
-        .css-bug-fix-bait {
+        /* === SOLUCIÓN "Wrapper" (NUEVO) === */
+        /* 1. Anulamos el ícono roto en el DIV wrapper que lo "atrapa" */
+        .post-content-wrapper::before,
+        .post-content-wrapper::after {
             display: none !important;
             content: none !important;
-            width: 0 !important;
-            height: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            position: absolute; /* Saca del flujo por si acaso */
         }
-         /* 2. Ocultar el span original (el que causaba todo) */
+        /* 2. Ocultar el span original (el que causaba todo) */
         .our-blog.blog-two > span {
             display: none !important;
         }
-        /* 3. Estilo para nuestra etiqueta de categoría (que ahora es el 3er hijo) */
+        /* 3. Estilo para nuestra etiqueta de categoría (que ahora está a salvo) */
         .blog-category-tag {
             background-color: #51c259;
-            color: #ffffff !important; /* !important para asegurar */
+            color: #ffffff !important; 
             padding: 5px 18px;
             display: inline-block; 
             border-radius: 20px;
@@ -259,12 +254,6 @@
             position: relative; 
             z-index: 2;
             margin-bottom: 15px;
-        }
-        /* 4. Anular cualquier pseudo-elemento en nuestra etiqueta (por si acaso) */
-        .blog-category-tag::before,
-        .blog-category-tag::after {
-            display: none !important;
-            content: none !important;
         }
         /* === FIN SOLUCIÓN === */
 
@@ -281,6 +270,13 @@
             height: 100%; /* Asegura que la tarjeta ocupe todo el alto */
             display: flex;
             flex-direction: column;
+        }
+         /* 1.b. Hacemos que el wrapper de contenido sea flexible */
+        .post-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Ocupa el espacio restante */
+            padding: 30px; /* Re-aplicamos el padding que tenía el div .our-blog */
         }
         .our-blog.blog-two p {
             flex-grow: 1; /* Empuja el footer del post hacia abajo */
@@ -312,7 +308,12 @@
         
         .our-blog.blog-two .our-admin {
             align-items: center; /* Centra verticalmente los elementos del footer */
+            padding-top: 20px; /* Añade espacio antes del footer del post */
         }
+        /* 3. Ajuste del padding de la caja del blog, ya que el wrapper lo maneja */
+         .our-blog.blog-two {
+            padding: 0; 
+         }
 
     </style>
 
@@ -414,26 +415,28 @@
                     <img src="https://via.placeholder.com/856x433" alt="IA para PYMES">
                   </figure>
                   
-                  <div class="css-bug-fix-bait"></div>
-                  <div class="blog-category-tag">Estrategia de Negocios</div>
-                  
-                  <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
+                  <div class="post-content-wrapper">
+                      <div class="blog-category-tag">Estrategia de Negocios</div>
+                      
+                      <div class="comment-flex">
+                        <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
+                      </div>
+                      <h3><a href="blog-ia-para-pymes.html">¿Está tu PYME preparada para la IA? 5 señales clave y cómo empezar sin morir en el intento.</a></h3>
+                      <p>Descubre si tu empresa está lista para dar el salto a la Inteligencia Artificial. Analizamos las señales que indican que es el momento de actuar y te ofrecemos una hoja de ruta práctica para iniciar la transformación digital sin grandes inversiones iniciales.</p>
+                      
+                      <div class="our-admin">
+                        <div class="admin-name">
+                          <img src="https://via.placeholder.com/50x50" alt="autor">
+                          <h6>Felipe Becerra Tellez</h6> 
+                        </div>
+                        <div class="social-share-buttons">
+                          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                          <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <a href="blog-ia-para-pymes.html" class="button">Leer Más</a>
+                      </div>
                   </div>
-                  <h3><a href="blog-ia-para-pymes.html">¿Está tu PYME preparada para la IA? 5 señales clave y cómo empezar sin morir en el intento.</a></h3>
-                  <p>Descubre si tu empresa está lista para dar el salto a la Inteligencia Artificial. Analizamos las señales que indican que es el momento de actuar y te ofrecemos una hoja de ruta práctica para iniciar la transformación digital sin grandes inversiones iniciales.</p>
-                  <div class="our-admin">
-                    <div class="admin-name">
-                      <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> 
-                    </div>
-                    <div class="social-share-buttons">
-                      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <a href="blog-ia-para-pymes.html" class="button">Leer Más</a>
                   </div>
-                </div>
             </div>
 
             <div class="col-md-6 mb-4 blog-grid-item">
@@ -442,26 +445,28 @@
                     <img src="https://via.placeholder.com/856x433" alt="Business Intelligence">
                   </figure>
 
-                  <div class="css-bug-fix-bait"></div>
-                  <div class="blog-category-tag">Business Intelligence</div>
+                  <div class="post-content-wrapper">
+                      <div class="blog-category-tag">Business Intelligence</div>
 
-                  <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
+                      <div class="comment-flex">
+                        <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
+                      </div>
+                      <h3><a href="blog-datos-al-crecimiento.html">De los Datos al Crecimiento: Cómo transformar la información de tu PYME en una ventaja competitiva.</a></h3>
+                      <p>Tu empresa genera datos todos los días. Aprende a convertir esa información en decisiones estratégicas que impulsen el crecimiento. Te mostramos el camino para implementar una cultura de datos y las herramientas para lograrlo.</p>
+                      
+                      <div class="our-admin">
+                        <div class="admin-name">
+                          <img src="https://via.placeholder.com/50x50" alt="autor">
+                          <h6>Felipe Becerra Tellez</h6> 
+                        </div>
+                         <div class="social-share-buttons">
+                          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                          <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <a href="blog-datos-al-crecimiento.html" class="button">Leer Más</a>
+                      </div>
                   </div>
-                  <h3><a href="blog-datos-al-crecimiento.html">De los Datos al Crecimiento: Cómo transformar la información de tu PYME en una ventaja competitiva.</a></h3>
-                  <p>Tu empresa genera datos todos los días. Aprende a convertir esa información en decisiones estratégicas que impulsen el crecimiento. Te mostramos el camino para implementar una cultura de datos y las herramientas para lograrlo.</p>
-                  <div class="our-admin">
-                    <div class="admin-name">
-                      <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> 
-                    </div>
-                     <div class="social-share-buttons">
-                      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-datos-al-crecimiento.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <a href="blog-datos-al-crecimiento.html" class="button">Leer Más</a>
                   </div>
-                </div>
             </div>
 
             <div class="col-md-6 mb-4 blog-grid-item">
@@ -470,26 +475,28 @@
                     <img src="https://via.placeholder.com/856x433" alt="Productividad con IA">
                   </figure>
                   
-                  <div class="css-bug-fix-bait"></div>
-                  <div class="blog-category-tag">Productividad</div>
-                  
-                  <div class="comment-flex">
-                    <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
+                  <div class="post-content-wrapper">
+                      <div class="blog-category-tag">Productividad</div>
+                      
+                      <div class="comment-flex">
+                        <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
+                      </div>
+                      <h3><a href="blog-prompting-superpoder.html">El Prompting: El nuevo superpoder para profesionales que quieren recuperar 10 horas a la semana.</a></h3>
+                      <p>La habilidad de "hablar" con la IA es la nueva competencia clave. Te explicamos qué es el prompting y cómo dominarlo puede automatizar tus tareas, eliminar la sobrecarga de trabajo y devolverte el tiempo para enfocarte en lo que realmente importa.</p>
+                      
+                      <div class="our-admin">
+                        <div class="admin-name">
+                          <img src="https://via.placeholder.com/50x50" alt="autor">
+                          <h6>Felipe Becerra Tellez</h6> 
+                        </div>
+                         <div class="social-share-buttons">
+                          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                          <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <a href="blog-prompting-superpoder.html" class="button">Leer Más</a>
+                      </div>
                   </div>
-                  <h3><a href="blog-prompting-superpoder.html">El Prompting: El nuevo superpoder para profesionales que quieren recuperar 10 horas a la semana.</a></h3>
-                  <p>La habilidad de "hablar" con la IA es la nueva competencia clave. Te explicamos qué es el prompting y cómo dominarlo puede automatizar tus tareas, eliminar la sobrecarga de trabajo y devolverte el tiempo para enfocarte en lo que realmente importa.</p>
-                  <div class="our-admin">
-                    <div class="admin-name">
-                      <img src="https://via.placeholder.com/50x50" alt="autor">
-                      <h6>Felipe Becerra Tellez</h6> 
-                    </div>
-                     <div class="social-share-buttons">
-                      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                    <a href="blog-prompting-superpoder.html" class="button">Leer Más</a>
                   </div>
-                </div>
             </div>
 
         </div>
