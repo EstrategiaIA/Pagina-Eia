@@ -227,12 +227,12 @@
         .our-blog.blog-two h3 a:hover {
           color: #51c259;
         }
-        
+
         /* === SOLUCIÓN "FUERA DE LA CAJA" (NUEVO) === */
-        /* 1. Estilo para la nueva etiqueta de categoría */
+        /* 1. Estilo para la etiqueta de categoría real */
         .blog-category-tag {
             background-color: #51c259;
-            color: #ffffff;
+            color: #ffffff !important; /* !important para asegurar */
             padding: 5px 18px;
             display: inline-block; 
             border-radius: 20px;
@@ -241,18 +241,15 @@
             line-height: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            position: relative; 
-            z-index: 2;
+        }
+        /* 2. Estilo para el "wrapper" que recibe el ícono roto */
+        .category-wrapper {
+            /* Este div recibirá el ícono roto, pero no tiene tamaño ni contenido */
             margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
         }
-        /* 2. Desactivación explícita de pseudo-elementos en la nueva clase */
-        .blog-category-tag::before,
-        .blog-category-tag::after {
-            display: none !important;
-            content: none !important;
-            background: none !important;
-        }
-        /* 3. Ocultar la regla del span antiguo (por si acaso) */
+        /* 3. Ocultar el span original (por si acaso) */
         .our-blog.blog-two > span {
           display: none !important;
         }
@@ -403,7 +400,10 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="IA para PYMES">
                   </figure>
-                  <div class="blog-category-tag">Estrategia de Negocios</div>
+                  
+                  <div class="category-wrapper">
+                    <div class="blog-category-tag">Estrategia de Negocios</div>
+                  </div>
                   
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
@@ -417,7 +417,7 @@
                     </div>
                     <div class="social-share-buttons">
                       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="httpshttps://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                      <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                     <a href="blog-ia-para-pymes.html" class="button">Leer Más</a>
                   </div>
@@ -429,8 +429,11 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="Business Intelligence">
                   </figure>
-                  <div class="blog-category-tag">Business Intelligence</div>
-                  
+
+                  <div class="category-wrapper">
+                    <div class="blog-category-tag">Business Intelligence</div>
+                  </div>
+
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
                   </div>
@@ -455,7 +458,10 @@
                   <figure>
                     <img src="https://via.placeholder.com/856x433" alt="Productividad con IA">
                   </figure>
-                  <div class="blog-category-tag">Productividad</div>
+                  
+                  <div class="category-wrapper">
+                    <div class="blog-category-tag">Productividad</div>
+                  </div>
                   
                   <div class="comment-flex">
                     <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
