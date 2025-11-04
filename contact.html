@@ -222,6 +222,37 @@
             color: #333;
         }
 
+         /* === ESTILOS FORMULARIO DE CONTACTO (NUEVO) === */
+         
+         /* CAMBIO: Poner el fondo del contenedor del formulario en verde */
+         .consultation.two {
+            background-color: #51c259 !important; 
+            /* La imagen de líneas (lines-shaps.png) se mantiene desde el HTML */
+         }
+
+         /* Estilo de "focus" para inputs y textareas */
+         .Contact-form input[type="text"]:focus,
+         .Contact-form input[type="email"]:focus,
+         .Contact-form input[type="tel"]:focus,
+         .Contact-form textarea:focus {
+            border-color: #51c259 !important;
+            box-shadow: 0 0 0 2px rgba(81, 194, 89, 0.3) !important; /* Un "glow" verde sutil */
+         }
+
+         /* Estilo para los selectores "nice-select" */
+         .Contact-form .nice-select:focus,
+         .Contact-form .nice-select.open {
+            border-color: #51c259 !important;
+            box-shadow: 0 0 0 2px rgba(81, 194, 89, 0.3) !important;
+         }
+         
+         /* Color de fondo para opciones seleccionadas o en hover */
+         .Contact-form .nice-select .option.selected,
+         .Contact-form .nice-select .option:hover {
+            background-color: #F0FFF0 !important; /* Verde pálido de fondo */
+            color: #333; /* Mantenemos texto oscuro para legibilidad */
+         }
+
     </style>
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -490,7 +521,8 @@
 </div>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/swiper.js"></script>
-<script src="assetsjs/jquery.nice-select.min.js"></script> <script>
+<script src="assets/js/jquery.nice-select.min.js"></script> 
+<script>
 // Script para el formulario dinámico
 $(document).ready(function() {
     // Esconder formularios al cargar la página
