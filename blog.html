@@ -228,35 +228,38 @@
           color: #51c259;
         }
 
-        /* === SOLUCIÓN "Wrapper" (NUEVO) === */
-        /* 1. Anulamos el ícono roto en el DIV wrapper que lo "atrapa" */
-        .post-content-wrapper::before,
-        .post-content-wrapper::after {
+        /* === SOLUCIÓN DEFINITIVA: "APROPIARSE" DEL SPAN ORIGINAL === */
+        
+        /* 1. Ocultar el ícono roto. Esta es la regla más importante. */
+        /* Usamos una especificidad muy alta para ganar la "guerra" */
+        body .our-blog.blog-two > span::before,
+        body .our-blog.blog-two > span::after {
             display: none !important;
             content: none !important;
+            background: none !important;
+            background-image: none !important;
         }
-        /* 2. Ocultar el span original (el que causaba todo) */
+
+        /* 2. Re-estilizar el <span> para que se vea como nuestra etiqueta verde */
         .our-blog.blog-two > span {
-            display: none !important;
-        }
-        /* 3. Estilo para nuestra etiqueta de categoría (que ahora está a salvo) */
-        .blog-category-tag {
-            background-color: #51c259;
-            color: #ffffff !important; 
-            padding: 5px 18px;
-            display: inline-block; 
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative; 
-            z-index: 2;
-            margin-bottom: 15px;
+            background-color: #51c259 !important; /* Nuestro color verde */
+            color: #ffffff !important;           /* Texto blanco */
+            padding: 5px 18px !important;
+            display: inline-block !important; 
+            border-radius: 20px !important;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            line-height: 20px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            position: relative !important; 
+            z-index: 2 !important;
+            margin-bottom: 15px !important;
+            width: auto !important; /* Asegurarse de que no ocupe todo el ancho */
+            top: 0; /* Resetear cualquier posicionamiento extraño */
+            left: 0; /* Resetear cualquier posicionamiento extraño */
         }
         /* === FIN SOLUCIÓN === */
-
 
         /* === ESTILOS BLOG (NUEVOS) === */
 
@@ -270,14 +273,22 @@
             height: 100%; /* Asegura que la tarjeta ocupe todo el alto */
             display: flex;
             flex-direction: column;
+            padding: 0; /* Quitamos el padding del contenedor principal */
         }
-         /* 1.b. Hacemos que el wrapper de contenido sea flexible */
-        .post-content-wrapper {
+        
+        /* 1.b. Hacemos que la figura ocupe todo el ancho */
+        .our-blog.blog-two figure {
+            margin-bottom: 0;
+        }
+
+         /* 1.c. Añadimos el padding al contenido de texto, no a la tarjeta entera */
+        .our-blog.blog-two .post-content {
+            padding: 30px;
             display: flex;
             flex-direction: column;
             flex-grow: 1; /* Ocupa el espacio restante */
-            padding: 30px; /* Re-aplicamos el padding que tenía el div .our-blog */
         }
+        
         .our-blog.blog-two p {
             flex-grow: 1; /* Empuja el footer del post hacia abajo */
         }
@@ -310,10 +321,6 @@
             align-items: center; /* Centra verticalmente los elementos del footer */
             padding-top: 20px; /* Añade espacio antes del footer del post */
         }
-        /* 3. Ajuste del padding de la caja del blog, ya que el wrapper lo maneja */
-         .our-blog.blog-two {
-            padding: 0; 
-         }
 
     </style>
 
@@ -415,8 +422,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="IA para PYMES">
                   </figure>
                   
-                  <div class="post-content-wrapper">
-                      <div class="blog-category-tag">Estrategia de Negocios</div>
+                  <div class="post-content">
+                      <span>Estrategia de Negocios</span>
                       
                       <div class="comment-flex">
                         <h6><i class="fa-regular fa-calendar"></i>Octubre 28, 2025</h6> 
@@ -431,7 +438,7 @@
                         </div>
                         <div class="social-share-buttons">
                           <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                          <a href="httpsci://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                          <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-ia-para-pymes.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                         <a href="blog-ia-para-pymes.html" class="button">Leer Más</a>
                       </div>
@@ -445,8 +452,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="Business Intelligence">
                   </figure>
 
-                  <div class="post-content-wrapper">
-                      <div class="blog-category-tag">Business Intelligence</div>
+                  <div class="post-content">
+                      <span>Business Intelligence</span>
 
                       <div class="comment-flex">
                         <h6><i class="fa-regular fa-calendar"></i>Octubre 15, 2025</h6> 
@@ -475,8 +482,8 @@
                     <img src="https://via.placeholder.com/856x433" alt="Productividad con IA">
                   </figure>
                   
-                  <div class="post-content-wrapper">
-                      <div class="blog-category-tag">Productividad</div>
+                  <div class="post-content">
+                      <span>Productividad</span>
                       
                       <div class="comment-flex">
                         <h6><i class="fa-regular fa-calendar"></i>Septiembre 30, 2025</h6> 
@@ -491,7 +498,7 @@
                         </div>
                          <div class="social-share-buttons">
                           <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-linkedin" title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                          <a href="https://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                          <a href="httpsG://api.whatsapp.com/send?text=Mira%20este%20artículo:%20https://www.estrategiaia.cl/blog-prompting-superpoder.html" target="_blank" class="share-whatsapp" title="Compartir en WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                         <a href="blog-prompting-superpoder.html" class="button">Leer Más</a>
                       </div>
