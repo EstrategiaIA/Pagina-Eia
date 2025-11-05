@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Método - EstrategiaIA</title>
+  <link rel="icon" href="assets/img/heading-img.png">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.0">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/color.css">
+
+    <style>
+      /* === CAMBIO GLOBAL DE COLOR A VERDE (#51c259) === */
+      
+      /* 1. Botones */
+      .button {
+          background-color: #51c259 !important; /* Nuevo color de fondo */
+          color: #ffffff !important; /* Texto blanco para contraste */
+      }
+      .button:hover {
+          color: #ffffff !important;
+      }
+      .button:before {
+        /* Efecto de oscurecimiento sutil al pasar el mouse */
+        background-color: rgba(0, 0, 0, 0.15) !important; 
+      }
+
+      /* 2. Resaltado de Títulos */
+      .heading span:before {
+          background-color: #51c259;
+      }
+      .widget-title .boder {
+        background-color: #51c259;
+        width: 50px;
+        height: 3px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* 3. Formas decorativas */
+      .ready-to:after {
+          background-color: #51c259 !important; 
+          border-color: #51c259 !important; 
+      }
+      .hero-section-one:after, /* Ocultar forma SVG no recoloreable */
+      .banner:after { /* Ocultar forma SVG no recoloreable en banner */
+          display: none !important;
+      }
+       
+      /* 4. Eliminar fondo ovalado azul/violeta */
+      .work-consulting {
+          background-color: transparent !important;
+          padding: 0 !important; 
+          border: none !important; 
+          width: auto !important; 
+          margin: 30px auto !important; 
+          display: block !important; 
+          text-align: center; 
+      }
+
+      /* 5. Cambiar color del efecto "shine" en imagen */
+      .img-hover figure::before {
+          background: linear-gradient(to right, rgba(81, 194, 89, 0) 0%, rgba(81, 194, 89, 0.3) 100%) !important;
+      }
+
+      /* === AJUSTES DE COLOR HEADER === */
+      .header-light .top-bar-slid { display: none; }
+      .header-light .bottom-bar { background-color: white; border-bottom: 1px solid #eee; }
+      .header-light .navbar-links li > a { color: #333; }
+      .header-light .menu-start svg { fill: #333; }
+      .header-light .line { stroke: #333; }
+      .header-light .bar-menu i { color: #333; }
+      
+       /* === ESTILOS PARA CAJAS ".consulting" === */
+      .consulting {
+        background-color: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex; /* Asegura altura consistente */
+        flex-direction: column; /* Alinea contenido verticalmente */
+        height: 100%; /* Ocupa toda la altura de la columna */
+      }
+       .consulting > * { /* Evita que los hijos hereden flex properties no deseadas */
+           flex-shrink: 0;
+       }
+       .consulting p { /* Permite que el párrafo ocupe espacio si es necesario */
+           flex-grow: 1;
+           text-align: left; /* Alinea a la izquierda dentro de la caja */
+       }
+      .consulting i, .consulting i img { transition: all 0.3s ease; }
+      .consulting h3 { color: #333333; transition: all 0.3s ease; margin-bottom: 15px; text-align: left; } /* Alinea a la izquierda */
+      .consulting p { color: #555555; transition: all 0.3s ease; }
+      .consulting h4 { font-size: 1.1em; color: #333333; font-weight: bold; text-align: left; } /* Alinea a la izquierda */
+      .consulting:hover { background-color: #51c259; border-color: #51c259; }
+      .consulting:hover h3, .consulting:hover p, .consulting:hover h4 { color: #FFFFFF; } 
+      .consulting:hover i { fill: #FFFFFF; color: #FFFFFF; } /* Para SVGs/Fonts */
+
+      /* === AJUSTES BANNER === */
+       .banner {
+           padding-top: 180px; 
+           padding-bottom: 100px; 
+       }
+       .banner-text p.subtitle {
+           color: #f0f0f0; 
+           font-size: 1.1em;
+           margin-top: 15px;
+           max-width: 700px; /* Limita el ancho del subtítulo */
+           margin: 15px auto 0 auto;
+       }
+       /* Ocultar breadcrumbs en banner */
+       .banner .breadcrumb {
+           display: none;
+       }
+       .banner-text h2 {
+            font-size: 2.8rem;
+       }
+
+        /* Ajustes menores para estructura de precios */
+        .heading.two h3 { font-size: 1rem; color: #51c259; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; }
+        .heading.two h2 { font-size: 1.8rem; margin-bottom: 30px; }
+        .bundle-section { background-color: #f7f7f7; padding: 50px 0; margin-top: 50px; border-radius: 12px; }
+        .bundle-section p { color: #555555; margin-bottom: 1rem; }
+         .bundle-section strong { color: #333333; }
+
+        /* Estilo lista programa profesionales (Antiguo - Conservado por si acaso) */
+         ul.list-style i { background-color: #51c259 !important; display: flex; align-items: center; justify-content: center; padding: 5px; border-radius: 50%; width: 30px; height: 30px; flex-shrink: 0; }
+         ul.list-style i img { filter: brightness(0) invert(1); width: 16px; height: 16px; }
+         ul.list-style li { color: #555555; display: flex; align-items: flex-start; margin-bottom: 1rem; }
+         ul.list-style li i { margin-right: 15px; margin-top: 3px; }
+         ul.list-style b { color: #333333; }
+         
+         /* === ESTILOS PRECIO REFERENCIAL === */
+         .price-container { margin-top: 1.5rem; text-align: center; }
+         .price-tag { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 5px; }
+         .price-launch { background-color: #008f39; color: #ffffff; }
+         .price-ref { background-color: #6c757d; color: #ffffff; }
+         .price-amount { font-size: 1.8em; font-weight: bold; display: block; margin-top: 5px; }
+         .price-launch-amount { color: #008f39; }
+         .price-ref-amount { color: #6c757d; text-decoration: line-through; font-size: 1.4em; margin-left: 15px; display: inline-block; /* Asegura alineación */ vertical-align: middle; /* Alinea verticalmente */ }
+    
+         /* === ESTILOS SECCION PROFESIONALES (NUEVO) === */
+        .profesional-step-box {
+            background-color: #FFFFFF;
+            border: 2px solid #E0F8E0; /* Borde verde claro */
+            border-radius: 12px;
+            padding: 30px 25px;
+            display: flex;
+            align-items: flex-start;
+            height: 100%; /* Para que las cajas tengan la misma altura */
+            transition: all 0.3s ease;
+        }
+        .profesional-step-box:hover {
+            border-color: #51c259; /* Verde corporativo al pasar el mouse */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        .profesional-step-box .step-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #51c259;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+        .profesional-step-box .step-content h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 8px;
+            text-align: left; /* Asegura alineación izquierda */
+        }
+        .profesional-step-box .step-content p {
+            color: #555555;
+            margin-bottom: 0;
+            text-align: left; /* Asegura alineación izquierda */
+            font-size: 0.95rem; /* Ajuste fino de texto */
+            line-height: 1.6;
+        }
+        /* Centrar texto introductorio */
+        #profesionales .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+        #profesionales .intro-text h3 {
+             font-size: 1.8rem;
+             color: #333;
+             margin-bottom: 10px;
+             font-weight: 700;
+        }
+        #profesionales .intro-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* === AJUSTES CONTACT INFO BOXES === */
+        .get-in-touch.two i {
+            color: #51c259;
+            fill: #51c259; /* Para los SVG */
+        }
+        .get-in-touch.two h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .get-in-touch.two a {
+            color: #51c259;
+            font-weight: bold;
+        }
+        .get-in-touch.two a:hover {
+            color: #333;
+        }
+
+         /* === ESTILOS FORMULARIO DE CONTACTO === */
+         .consultation.two {
+            background-color: #51c259 !important; 
+         }
+         .Contact-form input[type="text"]:focus,
+         .Contact-form input[type="email"]:focus,
+         .Contact-form input[type="tel"]:focus,
+         .Contact-form textarea:focus {
+            border-color: #51c259 !important;
+            box-shadow: 0 0 0 2px rgba(81, 194, 89, 0.3) !important;
+         }
+         .Contact-form .nice-select:focus,
+         .Contact-form .nice-select.open {
+            border-color: #51c259 !important;
+            box-shadow: 0 0 0 2px rgba(81, 194, 89, 0.3) !important;
+         }
+         .Contact-form .nice-select .option.selected,
+         .Contact-form .nice-select .option:hover {
+            background-color: #F0FFF0 !important;
+            color: #333;
+         }
+
+         /* === ESTILOS PÁGINA "EL MÉTODO" (NUEVO) === */
+        .metodo-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #51c259; /* Color corporativo */
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        .metodo-content p, .metodo-content li {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1.25rem;
+        }
+        .metodo-content hr {
+            margin: 50px 0;
+            border-top: 2px solid #E0E0E0;
+        }
+        .metodo-content blockquote {
+            background-color: #F0FFF0; /* Verde pálido */
+            border-left: 5px solid #51c259; /* Borde verde */
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .metodo-content blockquote p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 0;
+        }
+        .metodo-content blockquote p strong {
+             color: #008f39; /* Verde más oscuro para resaltar */
+        }
+        .metodo-content ul, .metodo-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .metodo-content ul li, .metodo-content ol li {
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .metodo-content li strong {
+            color: #333;
+        }
+        .metodo-content li em { /* Para los prompts */
+            color: #777;
+            font-family: monospace;
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+        .metodo-content p strong {
+            color: #333;
+        }
+
+        /* Contenedor CTA al final */
+        .cta-container {
+            background-color: #f7f7f7;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-container h4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .cta-container p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+        .cta-container .button {
+            margin: 5px 10px;
+        }
+
+    </style>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/loaded.js"></script>
+</head>
+<body class="header-light">
+<!-- preloader -->
+<div class="preloader">
+  <div class="loader"></div>
+</div>
+<!-- preloader end -->
+<!-- header -->
+<header class="header-light">
+  <div class="container">
+    <div class="top-bar-slid">
+      <div>
+        <div class="phone-data">
+          <div class="phone">
+            <i>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <path d="M0,81v350h512V81H0z M456.952,111L256,286.104L55.047,111H456.952z M30,128.967l134.031,116.789L30,379.787V128.967z
+                  M51.213,401l135.489-135.489L256,325.896l69.298-60.384L460.787,401H51.213z M482,379.788L347.969,245.756L482,128.967V379.788z"></path>
+              </svg>
+            </i><span>Email:</span><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a>
+          </div>
+          <div class="phone d-flax align-items-center">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                  </svg>
+            </i>
+            <span>WhatsApp:</span>
+            <a class="me-3" href="https://wa.me/56941102950">+56 9 4110 2950</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="container">
+        <div class="bottom-bar-text">
+          <a href="index.html"><img src="assets/img/logo.png?v=1.1" alt="Logo EstrategiaIA" style="max-height: 50px; width: auto;"></a>
+          <div class="boder-nav">
+            <nav class="navbar">
+            <!-- NAVEGACIÓN ACTUALIZADA CON "EL MÉTODO" -->
+            <ul class="navbar-links">
+                      <li><a href="index.html">Inicio</a></li>
+                      <li class="navbar-dropdown menu-item-children">
+                        <a href="soluciones.html">Soluciones</a>
+                        <div class="dropdown">
+                          <a href="soluciones.html#empresas">Para Empresas (PYMES)</a>
+                          <a href="soluciones.html#profesionales">Para Profesionales y Líderes</a>
+                        </div>
+                      </li>
+                      <li><a href="metodo.html">El Método</a></li>
+                      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                      <li><a href="soluciones-aplicadas.html">Soluciones Aplicadas</a></li>
+                      <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            </nav>
+            <div class="menu-end">
+              <a href="contact.html" class="button">Conversemos</a>
+            </div>
+        </div>
+        <div class="bar-menu">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+    </div>
+    </div>
+  </div>
+</header>
+<!-- header end -->
+<section class="banner" style="background-image: url(https://via.placeholder.com/1920x535); text-align: center;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="banner-text">
+                    <h2>El Método de Expertos en Cadena (M.E.C.&trade;)</h2>
+                    <p class="subtitle">Por qué el 99% de las personas usa mal la IA y cómo nuestros clientes la usan para obtener resultados de élite.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gap">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 metodo-content">
+        
+        <!-- CONTENIDO DE LA PÁGINA (SIN H1 Y H2) -->
+        <hr>
+ 
+        <h3>1. El Problema: La Trampa del "Asistente General"</h3>
+        <p>La frustración más grande en la adopción de la Inteligencia Artificial es la brecha entre la promesa y la realidad. Se nos promete una revolución, pero lo que a menudo obtenemos son resultados genéricos, mediocres y que requieren horas de re-trabajo manual. Esto resuena con los dolores que escuchamos a diario:</p>
+        
+        <blockquote>
+            <p><strong>Carolina Vega (Profesional):</strong> "Pierdo más tiempo corrigiendo a la IA que si lo hiciera yo misma. No tengo tiempo para aprender esto."</p>
+        </blockquote>
+        <blockquote>
+            <p><strong>Andrés Rojas (Dueño PYME):</strong> "Es muy complejo. Intenté usarla para marketing y los resultados fueron básicos. No veo el ROI."</p>
+        </blockquote>
+        
+        <p><strong>El Diagnóstico:</strong>
+        El error es fundamental. El 99% del mercado (incluida su competencia) trata a las IAs (ChatGPT, Gemini, etc.) como un "Asistente General" o un "practicante". Le piden a un solo asistente genérico que sea, al mismo tiempo, un Director Financiero, un Copywriter experto, un Analista de Datos y un Programador Senior. El resultado es predecible: un resultado de "practicante". Es un sistema roto.</p>
+        
+        <h3>2. La Solución: De "Asistente" a "Cadena de Expertos"</h3>
+        
+        <blockquote>
+            <p>En EstrategiaIA, nuestra filosofía es clara: <strong>"No entregamos herramientas; forjamos Estrategas Aumentados".</strong></p>
+        </blockquote>
+        
+        <p>Un Estratega Aumentado no habla con un "practicante". Un Estratega Aumentado dirige una cadena de expertos. Aquí presentamos nuestra metodología propietaria: El Método de Expertos en Cadena (M.E.C.&trade;).</p>
+        
+        <p><strong>Definición (M.E.C.&trade;):</strong>
+        Es un sistema propietario para orquestar múltiples roles de IA especialistas en una secuencia lógica (una "cadena"), donde el resultado de un experto es la instrucción para el siguiente. Usted deja de ser un simple "usuario" y se convierte en el "Director de Orquesta".</p>
+        
+        <h3>3. El Método Explicado (El "Cómo" Fundamental)</h3>
+        <p>La forma más clara de entender el M.E.C.&trade; es con el ejemplo del fotógrafo experto.</p>
+        <p><strong>Objetivo del Director (Usted):</strong> "Quiero mejorar esta foto (que ya tengo) para que tenga un aspecto cinematic y profesional, lista para una campaña."</p>
+        
+        <p><strong>El Enfoque Fallido (El 99%):</strong><br>
+        Ir a una IA y decir: "Mejora esta foto para que se vea cinemática."<br>
+        <em>Resultado: Un filtro genérico, mediocre.</em></p>
+        
+        <p><strong>El Enfoque Estratégico (El M.E.C.&trade;):</strong><br>
+        Usted, como Director, inicia la "Cadena de Expertos":</p>
+        
+        <ul>
+            <li><strong>Paso 1: El Director habla con el Experto 1 (El "Fotógrafo de Vogue" IA).</strong><br>
+            <em>Prompt: "Actúa como un fotógrafo experto de Vogue. Te daré una foto [Foto]. Dime estratégicamente qué necesito (luz, contraste, sombras, encuadre) para lograr un look cinematic moody."</em><br>
+            <em>Resultado (Output 1):</em> Un diagnóstico estratégico y una lista de directrices creativas.</li>
+        
+            <li><strong>Paso 2: El Director habla con el Experto 2 (El "Editor Técnico" IA).</strong><br>
+            <em>Prompt: "Actúa como un editor fotográfico profesional. Toma las siguientes directrices creativas [pegar Output 1] y escribe las instrucciones técnicas detalladas (ej. 'aumentar exposición en +0.5') para que un editor IA pueda ejecutarlo."</em><br>
+            <em>Resultado (Output 2):</em> Un plan de acción técnico y detallado.</li>
+        
+            <li><strong>Paso 3: El Director habla con el Experto 3 (El "Ingeniero de Prompts" IA).</strong><br>
+            <em>Prompt: "Actúa como un ingeniero de prompts experto en edición IA. Toma estas instrucciones técnicas [pegar Output 2] y fúndelas en un prompt único, infalible y compacto, listo para ser entregado a un asistente IA de edición."</em><br>
+            <em>Resultado (Output 3):</em> El "Prompt de Élite".</li>
+        
+            <li><strong>Paso 4: El Director habla con el "Ejecutor IA".</strong><br>
+            <em>Prompt: [Pegar Output 3] + [Adjuntar Foto].</em><br>
+            <em>Resultado Final:</em> Una foto editada a un nivel de experto, a la primera.</li>
+        </ul>
+        
+        <p>¿Ve la diferencia? Dejó de "pedir" y empezó a "dirigir". Este es el núcleo de la IA "práctica, aplicable y rentable".</p>
+        
+        <h3>4. El M.E.C.&trade; en Acción (Ejemplos de Clientes)</h3>
+        <p>Este método se extrapola a cualquier rubro.</p>
+        
+        <p><strong>Ejemplo 1: Foco Profesional (Carolina Vega) - Recuperar Productividad</strong><br>
+        <em>Objetivo del Director:</em> "Estoy sobrecargada. Necesito automatizar el reporte de avance de mi proyecto para Gerencia."<br>
+        <em>La Cadena M.E.C.&trade;:</em>
+        <ol>
+            <li><strong>Experto 1 (Director de Proyectos IA):</strong> "Actúa como PMO. Te daré 3 emails de mi equipo [Data]. Identifica 3 Logros Clave, 2 Riesgos y 1 Métrica de Avance."</li>
+            <li><strong>Experto 2 (Analista de Datos IA):</strong> "Actúa como Analista. Toma esos Riesgos y Métricas y resúmelos en una tabla markdown de 3 columnas."</li>
+            <li><strong>Experto 3 (Asistente Ejecutivo C-Level IA):</strong> "Actúa como mi Asistente Ejecutivo. Toma el análisis del PMO [Output 1] y la tabla [Output 2]. Escribe un email para Gerencia, con tono ejecutivo y confiable, resumiendo el estado."</li>
+        </ol>
+        <em>Resultado:</em> Una tarea de 90 minutos que consume "trabajo profundo" se reduce a 5 minutos de dirección. (Promesa: Recuperar 5-10 horas semanales).</p>
+        
+        <p><strong>Ejemplo 2: Foco Empresa (Andrés Rojas) - Generar Rentabilidad</strong><br>
+        <em>Objetivo del Director:</em> "Quiero crear un plan de marketing de contenidos para mi PYME (Software de Logística) sin tener un equipo especialista."<br>
+        <em>La Cadena M.E.C.&trade;:</em>
+        <ol>
+            <li><strong>Experto 1 (Consultor Marketing B2B IA):</strong> "Actúa como Consultor experto en [Logística]. Dime 3 dolores clave de un [Jefe de Bodega] y 3 pilares de contenido que ataquen esos dolores."</li>
+            <li><strong>Experto 2 (Copywriter Senior IA):</strong> "Actúa como Copywriter B2B. Toma esos pilares y dolores [Output 1] y escribe 12 'ganchos' (titulares) para posts de LinkedIn que generen curiosidad."</li>
+            <li><strong>Experto 3 (Estratega de Contenido IA):</strong> "Actúa como Estratega. Toma esos 12 ganchos [Output 2] y conviértelos en 12 posts completos, cada uno con un CTA para agendar una demo."</li>
+        </ol>
+        <em>Resultado:</em> Un mes de contenido de nivel agencia, altamente especializado, listo para publicar. (Promesa: IA práctica y rentable, sin costos fijos).</p>
+        
+        <h3>5. La Diferencia de EstrategiaIA</h3>
+        <p>El "Método de Expertos en Cadena" es nuestra filosofía. El verdadero ROI no está solo en conocer el método, sino en saber qué cadena de expertos aplicar y en qué proceso de su empresa o carrera para obtener el máximo retorno. Ahí es donde entramos nosotros.</p>
+        
+        <div class="cta-container">
+            <h4>Conviértete en un Estratega Aumentado.</h4>
+            <p>El M.E.C.&trade; es la metodología que usamos para darte el control. Descubre cómo la aplicamos en nuestras soluciones diseñadas para ti.</p>
+            <a href="soluciones.html#empresas" class="button">Ver Soluciones para PYMES</a>
+            <a href="soluciones.html#profesionales" class="button">Ver Programa para Profesionales</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="gap no-bottom" style="background-image:url(https://via.placeholder.com/1920x750)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="logo">
+          <a href="index.html">
+            <img alt="Logo EstrategiaIA" src="assets/img/logo.png?v=1.1" style="max-height: 50px; width: auto;">
+          </a>
+          <p>Un socio estratégico para desmitificar y aplicar la Inteligencia Artificial, generando valor real y sostenible para tu negocio o carrera profesional.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="widget-title">
+          <h3>Contacto</h3>
+          <div class="boder"></div>
+          <div class="get-in-touch">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                  </svg>
+            </i>
+            <div>
+              <span>WhatsApp</span> 
+              <h6><a href="https://wa.me/56941102950">+56 9 4110 2950</a></h6>
+            </div>
+          </div>
+          <div class="get-in-touch mb-0">
+            <i>
+              <svg width="60" height="40" viewBox="0 0 22 18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.8649 18H6.13513C2.58377 18 0.540527 15.9568 0.540527 12.4054V5.5946C0.540527 2.04324 2.58377 0 6.13513 0H15.8649C19.4162 0 21.4595 2.04324 21.4595 5.5946V12.4054C21.4595 15.9568 19.4162 18 15.8649 18ZM6.13513 1.45946C3.35242 1.45946 1.99999 2.81189 1.99999 5.5946V12.4054C1.99999 15.1881 3.35242 16.5406 6.13513 16.5406H15.8649C18.6476 16.5406 20 15.1881 20 12.4054V5.5946C20 2.81189 18.6476 1.45946 15.8649 1.45946H6.13513Z"></path>
+                  <path d="M10.9988 9.8465C10.1815 9.8465 9.35452 9.59352 8.72208 9.07785L5.67668 6.64539C5.36532 6.39241 5.30696 5.93511 5.55992 5.62376C5.8129 5.31241 6.2702 5.25403 6.58155 5.50701L9.62695 7.93947C10.3664 8.53298 11.6215 8.53298 12.361 7.93947L15.4064 5.50701C15.7178 5.25403 16.1848 5.30268 16.428 5.62376C16.681 5.93511 16.6324 6.40214 16.3113 6.64539L13.2659 9.07785C12.6432 9.59352 11.8161 9.8465 10.9988 9.8465Z" ></path>
+                </svg>
+            </i>
+            <div>
+              <span>Email</span>
+              <h6><a href="mailto:contacto@estrategiaia.cl">contacto@estrategiaia.cl</a></h6>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="widget-title">
+          <h3>Navegación</h3>
+          <div class="boder"></div>
+            <!-- NAVEGACIÓN DE FOOTER ACTUALIZADA -->
+            <ul class="text-hover">
+              <li><i class="fa-solid fa-angle-right"></i><a href="index.html">Inicio</a></li>
+              <li><i class="fa-solid fa-angle-right"></i><a href="soluciones.html">Nuestras Soluciones</a></li>
+              <li><i class="fa-solid fa-angle-right"></i><a href="metodo.html">El Método</a></li>
+              <li><i class="fa-solid fa-angle-right"></i><a href="quienes-somos.html">Quiénes Somos</a></li>
+              <li><i class="fa-solid fa-angle-right"></i><a href="soluciones-aplicadas.html">Soluciones Aplicadas</a></li>
+              <li><i class="fa-solid fa-angle-right"></i><a href="contact.html">Contacto</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-text">
+          <h6>© Copyright 2025 EstrategiaIA. Todos los derechos reservados.</h6>
+        </div>
+      </div>
+  </div>
+</footer>
+<!-- footer end -->
+<!-- progress -->
+<div id="progress">
+      <span id="progress-value"><i class="fa-solid fa-up-long"></i></span>
+</div>
+<!-- search-popup -->
+<div class="search-popup">
+      <button class="close-search"><i class="fa-solid fa-arrow-right"></i></button>
+      <form method="post" action="#">
+          <div class="form-group">
+              <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+              <button type="submit"><i class="fa fa-search"></i></button>
+          </div>
+      </form>
+</div>
+<!-- search-popup end -->
+<!-- Bootstrap Js -->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<!-- fancybox -->
+<script src="assets/js/jquery.fancybox.min.js"></script>
+<script src="assets/js/custom.js"></script>
+</body>
+</html>
